@@ -1,0 +1,18 @@
+# The centre of the graph.
+- id: me
+  type: person
+  label: Kunal Dovedy
+  subtitle: Connected Creativity
+  summary: >-
+    Interactive artist and digital transformation leader in San Francisco.
+    One line holds the whole practice together: he designs products, advises
+    digital transformation, builds collaborative teams, and creates
+    interactive art and music.
+  source: public-web
+  confidence: high
+  refs:
+    - https://www.kunaldovedy.com/
+    - https://www.linkedin.com/in/kdovedy/
+  props:
+    based_in: San Francisco, California
+    studio: Dovedy LLC

@@ -1,0 +1,68 @@
+# Stage 2 — the five verbs, taken from the "What I Do" list on his own About
+# page, in his order:
+#
+#   Design products · Advise digital transformation ·
+#   Build highly collaborative teams · Enable information transparency ·
+#   Create interactive art & music
+
+- id: p-product-design
+  type: practice
+  label: Designing products
+  subtitle: From a vague need to a thing that ships
+  summary: >-
+    First on his own list: "Design products." Product design across digital
+    customer experience, which at Sierra reaches the client as rapid
+    prototyping: working applications built fast enough to test against the
+    business case rather than argue about.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]
+
+- id: p-transformation
+  type: practice
+  label: Advising digital transformation
+  subtitle: Changing how an organisation works, not just its tools
+  summary: >-
+    Second on his own list: "Advise digital transformation." Guiding
+    organisations through systemic change with technology. The current seat is
+    Senior Director of Digital Customer Experience Transformation at Ralliant;
+    the consulting seat is Sierra Technology.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]
+
+- id: p-teams
+  type: practice
+  label: Building highly collaborative teams
+  subtitle: The durable deliverable
+  summary: >-
+    Third on his own list: "Build highly collaborative teams." Assembling and
+    leading teams across functions, countries and time zones, so that the
+    capability stays after the project ends.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]
+
+- id: p-transparency
+  type: practice
+  label: Enabling information transparency
+  subtitle: Making the organisation able to see itself
+  summary: >-
+    Fourth on his own list: "Enable information transparency." At Sierra this
+    is a named service: define the data strategy, then architect and develop
+    the infrastructure needed to democratize the data. The value underneath it
+    is that information beats control.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]
+
+- id: p-art-music
+  type: practice
+  label: Creating interactive art and music
+  subtitle: Where strangers become collaborators
+  summary: >-
+    Fifth on his own list: "Create interactive art & music." Large scale
+    interactive sound art, made to be played by whoever walks up to it.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]

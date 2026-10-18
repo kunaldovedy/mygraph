@@ -1,0 +1,27 @@
+/* Append these two blocks to src/app/globals.css. Both belong to the service
+   graph at /graph and affect nothing else on the site. */
+
+/* The ring that marks a selected node in the service graph. */
+@keyframes graph-pulse {
+  0%   { opacity: 0.9; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.55); }
+  100% { opacity: 0;   transform: scale(1.55); }
+}
+.graph-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: graph-pulse 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .graph-pulse { animation: none; }
+}
+
+/* Hit targets in the service graph are transparent circles. The default focus
+   box would draw a square around a round node, so focus is drawn as a ring. */
+.graph-hit {
+  outline: none;
+}
+.graph-hit:focus-visible {
+  stroke: #ff6b7e;
+  stroke-width: 2.5px;
+}

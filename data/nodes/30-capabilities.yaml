@@ -1,0 +1,112 @@
+# Stage 3 — what he can do that is hard to buy.
+- id: c-cx-strategy
+  type: capability
+  label: Digital customer experience strategy
+  summary: >-
+    Designing the whole path a customer takes through a company, then rebuilding
+    the digital parts of it.
+  source: public-profile
+  confidence: high
+
+- id: c-systems-change
+  type: capability
+  label: Systemic change leadership
+  summary: >-
+    Moving a large organisation from one operating model to another, including
+    the parts that are politics rather than technology.
+  source: public-profile
+  confidence: high
+
+- id: c-it-operations
+  type: capability
+  label: IT and service operations leadership
+  summary: >-
+    Running information technology for facilities and field service businesses.
+    Director of Information Technology at ServiceChannel and at Gordian.
+  source: public-profile
+  confidence: high
+
+- id: c-media-production
+  type: capability
+  label: Film and media production
+  summary: >-
+    A BA in Film and Media Studies from UC Santa Barbara, plus screen credits in
+    additional crew, visual effects and sound department.
+  source: public-profile
+  confidence: high
+  refs: [https://www.imdb.com/name/nm3366460/]
+
+- id: c-distributed-production
+  type: capability
+  label: Distributed production management
+  summary: >-
+    Coordinating graphics and animation teams, translators and transcribers
+    across six countries to a single release.
+  source: public-profile
+  confidence: high
+
+- id: c-growth-strategy
+  type: capability
+  label: Digital engagement and growth strategy
+  summary: >-
+    Building demand for a professional services practice in a new market. An MBA
+    in Marketing and Technology sits behind it.
+  source: public-profile
+  confidence: high
+
+- id: c-fabrication
+  type: capability
+  label: Heavy fabrication and repurposing
+  summary: >-
+    Taking industrial hardware apart and rebuilding it as something people can
+    touch. The J79 compressor is the proof.
+  source: inferred
+  confidence: medium
+
+- id: c-sound-programming
+  type: capability
+  label: Sound and web audio programming
+  summary: >-
+    Interactive sound in the browser. The public cadence repository is built on
+    Tone.js and web components.
+  source: public-github
+  confidence: medium
+  refs: [https://github.com/kunaldovedy/cadence]
+
+- id: c-facilitation
+  type: capability
+  label: Facilitation and coaching
+  summary: >-
+    Getting a room of people with different incentives to agree on one next step.
+  source: inferred
+  confidence: low
+
+- id: c-rapid-prototyping
+  type: capability
+  label: Rapid prototyping
+  summary: >-
+    A named Sierra Technology service: build working digital applications fast
+    enough to test them against the business case.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: c-data-architecture
+  type: capability
+  label: Data strategy and architecture
+  summary: >-
+    A named Sierra Technology service: define the data strategy, then architect
+    and develop the infrastructure needed to democratize the data.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: c-solution-advisory
+  type: capability
+  label: Solution advisory
+  summary: >-
+    A named Sierra Technology service: which technologies are practical to
+    adopt, and how they fit the systems a company already runs.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]

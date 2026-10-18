@@ -1,0 +1,22 @@
+# One source of truth for colour. The visualisation reads these values out of
+# build/graph.json, so changing a hex here changes the page.
+#
+# The eight categorical hues are a validated set: each adjacent pair clears a
+# colour-vision-deficiency separation of Delta E >= 8 (OKLab x100) in both modes.
+# Because a network diagram puts every type on screen at once, colour alone is
+# not enough — every node type also carries its own glyph shape, and the legend
+# is always present. See docs/design.md.
+categorical:
+  blue:    { light: "#2a78d6", dark: "#3987e5" }
+  orange:  { light: "#eb6834", dark: "#d95926" }
+  aqua:    { light: "#1baf7a", dark: "#199e70" }
+  yellow:  { light: "#eda100", dark: "#c98500" }
+  magenta: { light: "#e87ba4", dark: "#d55181" }
+  green:   { light: "#008300", dark: "#008300" }
+  violet:  { light: "#4a3aa7", dark: "#9085e9" }
+  red:     { light: "#e34948", dark: "#e66767" }
+  ink:     { light: "#14171c", dark: "#f2f4f7" }
+
+surface:
+  light: "#eef0f3"
+  dark:  "#101317"

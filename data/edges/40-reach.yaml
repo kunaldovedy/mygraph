@@ -1,0 +1,40 @@
+# Who the vehicles put the work in front of.
+- { src: o-ralliant, rel: reaches, dst: a-industrial-customers, weight: 1.6, source: inferred, confidence: medium }
+- { src: o-ralliant, rel: reaches, dst: a-colleagues, weight: 1.6, source: inferred, confidence: medium }
+- { src: o-sierra, rel: reaches, dst: a-executives, source: inferred, confidence: medium }
+- { src: o-sierra, rel: reaches, dst: a-industrial-customers, source: inferred, confidence: low }
+- { src: o-fortive, rel: reaches, dst: a-industrial-customers, source: inferred, confidence: medium }
+- { src: o-fortive, rel: reaches, dst: a-colleagues, source: inferred, confidence: medium }
+- { src: o-servicechannel, rel: reaches, dst: a-field-teams, weight: 1.8, source: inferred, confidence: medium }
+- { src: o-servicechannel, rel: reaches, dst: a-industrial-customers, source: inferred, confidence: medium }
+- { src: o-gordian, rel: reaches, dst: a-industrial-customers, source: inferred, confidence: medium }
+- { src: o-gordian, rel: reaches, dst: a-field-teams, source: inferred, confidence: low }
+- { src: o-adizes, rel: reaches, dst: a-executives, weight: 1.6, source: public-profile, confidence: high }
+- { src: o-adizes, rel: reaches, dst: a-consultants, weight: 1.8, source: public-profile, confidence: high }
+- { src: o-burning-man, rel: reaches, dst: a-festival-participants, weight: 2.0, source: public-web, confidence: high }
+- { src: o-maker-faire, rel: reaches, dst: a-makers, weight: 1.6, source: public-web, confidence: high }
+- { src: o-oakland-aviation-museum, rel: reaches, dst: a-museum-visitors, weight: 2.0, source: public-web, confidence: high }
+- { src: o-kickstarter, rel: reaches, dst: a-backers, weight: 1.4, source: public-web, confidence: high }
+- { src: o-github, rel: reaches, dst: a-developers, source: public-github, confidence: high }
+- { src: o-youtube, rel: reaches, dst: a-makers, source: inferred, confidence: low }
+- { src: o-youtube, rel: reaches, dst: a-musicians, source: inferred, confidence: low }
+- { src: o-dovedy-llc, rel: reaches, dst: a-musicians, source: inferred, confidence: low }
+
+# A couple of works are their own channel.
+- { src: w-cadence, rel: reaches, dst: a-musicians, source: inferred, confidence: low }
+- { src: w-portfolio-site, rel: reaches, dst: a-executives, source: inferred, confidence: low }
+
+# What each practice serves directly, vehicle or no vehicle.
+- { src: p-transformation, rel: serves, dst: a-executives, weight: 1.6, source: public-profile, confidence: high }
+- { src: p-transformation, rel: serves, dst: a-industrial-customers, source: inferred, confidence: medium }
+- { src: p-product-design, rel: serves, dst: a-field-teams, source: inferred, confidence: medium }
+- { src: p-product-design, rel: serves, dst: a-industrial-customers, weight: 1.4, source: inferred, confidence: medium }
+- { src: p-teams, rel: serves, dst: a-colleagues, weight: 2.0, source: inferred, confidence: medium }
+- { src: p-art-music, rel: serves, dst: a-festival-participants, weight: 1.6, source: public-web, confidence: high }
+- { src: p-art-music, rel: serves, dst: a-museum-visitors, weight: 1.6, source: public-web, confidence: high }
+- { src: p-art-music, rel: serves, dst: a-makers, source: public-web, confidence: high }
+
+# The fifth practice serves the people who have to decide with the data.
+- { src: p-transparency, rel: serves, dst: a-executives, weight: 1.6, source: inferred, confidence: medium }
+- { src: p-transparency, rel: serves, dst: a-field-teams, weight: 1.4, source: inferred, confidence: medium }
+- { src: p-transparency, rel: serves, dst: a-colleagues, source: inferred, confidence: low }

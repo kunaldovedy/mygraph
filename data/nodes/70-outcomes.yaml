@@ -1,0 +1,78 @@
+# Stage 7 — what actually changed. Outcomes point back at values: that returning
+# edge is the loop.
+- id: x-wonder
+  type: outcome
+  label: Wonder, and permission to play
+  summary: >-
+    A person walks up to a machine that should be frightening and finds out they
+    are allowed to play it.
+  source: inferred
+  confidence: medium
+
+- id: x-strangers-collaborate
+  type: outcome
+  label: Strangers make music together
+  summary: >-
+    The instrument needs more than one pair of hands to be interesting, so it
+    manufactures collaboration between people who have not met.
+  source: inferred
+  confidence: medium
+
+- id: x-swords-to-song
+  type: outcome
+  label: A war machine made peaceful
+  summary: >-
+    A compressor built to move a fighter at Mach 2 now rings like a set of
+    tuning forks in a museum.
+  source: public-web
+  confidence: high
+
+- id: x-teams-that-ship
+  type: outcome
+  label: Teams that can ship without him
+  summary: >-
+    The measure of the team building practice: capability that stays behind.
+  source: inferred
+  confidence: medium
+
+- id: x-cleaner-operations
+  type: outcome
+  label: Operations that run cleaner
+  summary: >-
+    Less friction between a customer's request and the work getting done.
+  source: inferred
+  confidence: low
+
+- id: x-knowledge-portable
+  type: outcome
+  label: Knowledge made portable
+  summary: >-
+    Thirty-four DVDs in several languages: a methodology that can travel without
+    its author in the room.
+  source: public-profile
+  confidence: high
+
+- id: x-practice-grew
+  type: outcome
+  label: A practice that grew
+  summary: Significant growth for the Adizes consulting practice in Russia.
+  source: public-profile
+  confidence: high
+
+- id: x-open-tools
+  type: outcome
+  label: Tools others can fork
+  summary: Public code that someone else can pick up.
+  source: public-github
+  confidence: medium
+
+- id: x-data-democratized
+  type: outcome
+  label: Data people can actually use
+  summary: >-
+    Information that is immediate, available and usable, in the hands of the
+    people who have to decide with it, rather than locked behind whoever owns
+    the system.
+  source: public-web-indexed
+  confidence: medium
+  refs: [https://sierra.technology/]

@@ -1,0 +1,24 @@
+[project]
+name = "mygraph"
+version = "1.0.0"
+description = "A service graph: how one person serves the world, as a graph database and a drawing."
+license = { file = "LICENSE.md" }
+authors = [{ name = "Kunal Dovedy" }]
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+mygraph = "mygraph.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

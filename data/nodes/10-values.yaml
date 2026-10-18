@@ -1,0 +1,122 @@
+# Stage 1 — what must stay true.
+#
+# Four of these are Sierra Technology's own stated values, in its own words.
+# Two come from the About page on kunaldovedy.com. One the subject confirmed
+# directly. Two remain read between the lines of the Turbinophone's story.
+
+- id: v-connected-creativity
+  type: value
+  label: Connected Creativity
+  subtitle: The banner over all of it
+  summary: >-
+    Creativity is not a solo act. The work is worth doing when it connects
+    people to each other, and connects the technical to the human.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/]
+
+- id: v-enhance-humanity
+  type: value
+  label: Enhance humanity
+  subtitle: The test a project has to pass
+  summary: >-
+    Dovedy LLC was founded for multidisciplinary projects meant to enhance
+    humanity. That is the filter: does this leave people better off.
+  source: public-profile
+  confidence: high
+  refs: [https://www.linkedin.com/in/kdovedy/]
+
+- id: v-information-over-control
+  type: value
+  label: Information is greater than control
+  subtitle: Decision making comes before preventing bad outcomes
+  summary: >-
+    A stated value of Sierra Technology, in its own words: it "places the
+    sovereignty of decision making before limiting undesired scenarios." Give
+    people what they need to decide rather than narrowing what they are allowed
+    to do.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: v-data-transparency
+  type: value
+  label: Data transparency
+  subtitle: Trust is downstream of access
+  summary: >-
+    A stated value of Sierra Technology, in its own words: it "increases trust
+    in the company, by making data immediate, available, and usable."
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: v-freeing-humans
+  type: value
+  label: Freeing humans with automation
+  subtitle: Automation is for people, not instead of them
+  summary: >-
+    A stated value of Sierra Technology, in its own words: it "delivers more
+    time and energy to people by freeing them from repetitive, monotonous,
+    error-prone work."
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: v-innovation-at-the-edge
+  type: value
+  label: Innovation at the edge
+  subtitle: New things start where the people are
+  summary: >-
+    A stated value of Sierra Technology, in its own words: it "creates an
+    environment to allow for innovation take place at the people-focused areas
+    of the company." Not in a central lab, at the edge where the work happens.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+
+- id: v-shared-knowledge
+  type: value
+  label: Knowledge shared, not hoarded
+  subtitle: The open source movement, as a way of thinking
+  summary: >-
+    In his own words: "I feel motivated and inspired by those who innovate and
+    share their knowledge with those who need it. I feel that this method of
+    thinking is very much like the open source movement, of which I have the
+    utmost respect."
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/about]
+
+- id: v-collaboration
+  type: value
+  label: Build the team, not the hero
+  subtitle: Capability over dependency
+  summary: >-
+    Success looks like a group that can carry on without him. His own public
+    description of the work is to "build highly collaborative teams", and he
+    confirmed this framing of why.
+  source: self
+  confidence: high
+
+- id: v-play-as-doorway
+  type: value
+  label: Play is the doorway
+  subtitle: Discovery before instruction
+  summary: >-
+    At Burning Man 2013 nobody handed out instructions. Participants worked
+    out how to play a jet engine by dropping ball bearings into it. Curiosity
+    did the teaching.
+  source: inferred
+  confidence: medium
+  refs: [http://www.turbinophone.com/]
+
+- id: v-machines-can-sing
+  type: value
+  label: Machines can sing
+  subtitle: Repurpose, do not scrap
+  summary: >-
+    A compressor that pushed an F-4 Phantom past Mach 2 now rings like a set
+    of tuning forks. Hard engineering can be turned toward wonder.
+  source: inferred
+  confidence: medium
+  refs: [http://www.turbinophone.com/]

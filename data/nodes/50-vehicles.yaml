@@ -1,0 +1,152 @@
+# Stage 5 — the organisations, venues and platforms that carry the work outward.
+- id: o-dovedy-llc
+  type: vehicle
+  label: Dovedy LLC
+  subtitle: The studio
+  summary: >-
+    Founded for multidisciplinary projects meant to enhance humanity. The
+    Turbinophone came out of it.
+  source: public-profile
+  confidence: high
+  props: { kind: studio }
+
+- id: o-ralliant
+  type: vehicle
+  label: Ralliant
+  subtitle: Senior Director, Digital Customer Experience Transformation
+  summary: The current seat, since June 2025.
+  source: public-profile
+  confidence: high
+  refs: [https://theorg.com/org/ralliant/org-chart/kunal-dovedy]
+  props: { kind: employer, since: 2025-06 }
+
+- id: o-sierra
+  type: vehicle
+  label: Sierra Technology
+  subtitle: Consultant, since July 2019
+  summary: >-
+    A consultancy for digital transformation, aiming to help companies achieve
+    tangible growth in their initiatives and to guide them on the journey to
+    technology excellence. Three named services: rapid prototyping, data
+    transparency, and solution advisory. Its four stated values sit in stage 1
+    of this graph.
+  source: public-web-indexed
+  confidence: high
+  refs: [https://sierra.technology/]
+  props: { kind: consultancy, since: 2019-07 }
+
+- id: o-fortive
+  type: vehicle
+  label: Fortive
+  subtitle: Senior Director
+  summary: An industrial technology group; a prior senior director seat.
+  source: public-profile
+  confidence: high
+  props: { kind: employer }
+
+- id: o-servicechannel
+  type: vehicle
+  label: ServiceChannel
+  subtitle: Director of Information Technology
+  summary: Facilities and field service management software.
+  source: public-profile
+  confidence: high
+  props: { kind: employer }
+
+- id: o-gordian
+  type: vehicle
+  label: Gordian
+  subtitle: Director of Information Technology
+  summary: Construction cost data and procurement services.
+  source: public-profile
+  confidence: high
+  props: { kind: employer }
+
+- id: o-adizes
+  type: vehicle
+  label: Adizes Institute
+  subtitle: Organisational transformation methodology
+  summary: >-
+    The institute whose teaching he put on 34 DVDs and whose Russian practice he
+    grew through digital engagement.
+  source: public-profile
+  confidence: high
+  props: { kind: client }
+
+- id: o-burning-man
+  type: vehicle
+  label: Burning Man 2013
+  subtitle: Cargo Cult
+  summary: >-
+    Where the Turbinophone was first installed, deep in the desert, with no
+    instructions attached.
+  source: public-web
+  confidence: high
+  props: { kind: festival, year: 2013 }
+
+- id: o-maker-faire
+  type: vehicle
+  label: Maker Faire Bay Area 2014
+  subtitle: Best in Class
+  summary: Where the Turbinophone won a Best in Class award.
+  source: public-web
+  confidence: high
+  props: { kind: exhibition, year: 2014 }
+
+- id: o-oakland-aviation-museum
+  type: vehicle
+  label: Oakland Aviation Museum
+  subtitle: Permanent display
+  summary: >-
+    Where the Turbinophone lives now, in front of visitors who came to look at
+    aircraft and find they can play one.
+  source: public-web
+  confidence: high
+  props: { kind: museum }
+
+- id: o-kickstarter
+  type: vehicle
+  label: Kickstarter
+  subtitle: The build was crowdfunded
+  summary: The Turbinophone was funded by backers ahead of Burning Man 2013.
+  source: public-web
+  confidence: high
+  refs: [https://www.kickstarter.com/projects/kdovedy/the-turbinophone-burning-man-2013]
+  props: { kind: platform }
+
+- id: o-github
+  type: vehicle
+  label: GitHub
+  subtitle: Open repositories
+  summary: Where the public code sits, available to anyone who wants to fork it.
+  source: public-github
+  confidence: high
+  props: { kind: platform }
+
+- id: o-youtube
+  type: vehicle
+  label: YouTube
+  subtitle: A personal channel
+  summary: Video documentation of the work.
+  source: public-web
+  confidence: medium
+  refs: [https://www.youtube.com/c/KunalDovedy]
+  props: { kind: platform }
+
+- id: o-ucsb
+  type: vehicle
+  label: UC Santa Barbara
+  subtitle: BA, Film and Media Studies
+  summary: Where the media craft was formed.
+  source: public-profile
+  confidence: high
+  props: { kind: school }
+
+- id: o-etamu
+  type: vehicle
+  label: East Texas A&M University
+  subtitle: MBA, Marketing and Technology
+  summary: Where the commercial half was formed.
+  source: public-profile
+  confidence: high
+  props: { kind: school }

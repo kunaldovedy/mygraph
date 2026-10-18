@@ -1,0 +1,20 @@
+# Work needs a vehicle. Nothing reaches anyone on its own.
+- { src: w-turbinophone, rel: carried_by, dst: o-dovedy-llc, source: public-profile, confidence: high }
+- { src: w-turbinophone, rel: carried_by, dst: o-kickstarter, note: Funded by backers before Burning Man 2013, source: public-web, confidence: high }
+- { src: w-turbinophone, rel: carried_by, dst: o-burning-man, weight: 1.8, source: public-web, confidence: high }
+- { src: w-turbinophone, rel: carried_by, dst: o-maker-faire, weight: 1.4, source: public-web, confidence: high }
+- { src: w-turbinophone, rel: carried_by, dst: o-oakland-aviation-museum, weight: 1.8, source: public-web, confidence: high }
+
+- { src: w-adizes-dvds, rel: carried_by, dst: o-adizes, weight: 1.6, source: public-profile, confidence: high }
+- { src: w-adizes-russia, rel: carried_by, dst: o-adizes, weight: 1.6, source: public-profile, confidence: high }
+
+- { src: w-cx-transformation, rel: carried_by, dst: o-ralliant, weight: 1.8, source: public-profile, confidence: high }
+- { src: w-cx-transformation, rel: carried_by, dst: o-sierra, source: public-profile, confidence: high }
+- { src: w-cx-transformation, rel: carried_by, dst: o-fortive, source: public-profile, confidence: high }
+- { src: w-cx-transformation, rel: carried_by, dst: o-servicechannel, source: public-profile, confidence: high }
+- { src: w-cx-transformation, rel: carried_by, dst: o-gordian, source: public-profile, confidence: high }
+
+- { src: w-cadence, rel: carried_by, dst: o-github, source: public-github, confidence: high }
+- { src: w-goalhive, rel: carried_by, dst: o-github, source: public-github, confidence: high }
+- { src: w-portfolio-site, rel: carried_by, dst: o-dovedy-llc, source: public-web, confidence: high }
+- { src: w-video-channel, rel: carried_by, dst: o-youtube, source: public-web, confidence: high }
