@@ -1,0 +1,111 @@
+# mygraph ontology — the shape of a service graph.
+#
+# A service graph answers one question: how does a person serve the world?
+# It reads outward from the centre in stages, like the stages of a compressor:
+#
+#   me -> values -> practices -> capabilities -> works -> vehicles -> audiences -> outcomes
+#
+# Outcomes point back at values. That returning edge is the loop that keeps
+# the whole machine turning.
+
+meta:
+  name: mygraph
+  version: 1
+  subject: me            # node id of the person at the centre
+
+# ---------------------------------------------------------------- node types
+# stage      ring index in the radial layout (0 = centre)
+# palette    validated categorical slot (see docs/design.md)
+# glyph      shape drawn in the visualisation; identity is never colour alone
+node_types:
+  person:
+    label: Person
+    plural: People
+    stage: 0
+    glyph: core
+    palette: ink
+    question: Who is at the centre?
+  value:
+    label: Value
+    plural: Values
+    stage: 1
+    glyph: diamond
+    palette: violet
+    question: What must stay true?
+  practice:
+    label: Practice
+    plural: Practices
+    stage: 2
+    glyph: circle
+    palette: blue
+    question: What do I actually do?
+  capability:
+    label: Capability
+    plural: Capabilities
+    stage: 3
+    glyph: triangle
+    palette: green
+    question: What can I do that is hard to buy?
+  work:
+    label: Work
+    plural: Works
+    stage: 4
+    glyph: square
+    palette: orange
+    question: What did I make?
+  vehicle:
+    label: Vehicle
+    plural: Vehicles
+    stage: 5
+    glyph: hexagon
+    palette: magenta
+    question: Through what does the work travel?
+  audience:
+    label: Audience
+    plural: Audiences
+    stage: 6
+    glyph: pentagon
+    palette: aqua
+    question: Who is on the other end?
+  outcome:
+    label: Outcome
+    plural: Outcomes
+    stage: 7
+    glyph: cross
+    palette: yellow
+    question: What changed for them?
+
+# ---------------------------------------------------------------- edge types
+# kind: forward (outward through the stages) | return (feedback, drawn dashed)
+edge_types:
+  guided_by:   { label: is guided by,   kind: forward, from: [person], to: [value] }
+  practices:   { label: practices,      kind: forward, from: [person], to: [practice] }
+  formed_by:   { label: was formed by,  kind: forward, from: [person, capability], to: [vehicle] }
+  expresses:   { label: expresses,      kind: forward, from: [practice, work], to: [value] }
+  uses:        { label: uses,           kind: forward, from: [practice], to: [capability] }
+  enables:     { label: enables,        kind: forward, from: [capability], to: [work] }
+  made:        { label: made,           kind: forward, from: [person], to: [work] }
+  role_at:     { label: holds a role at, kind: forward, from: [person], to: [vehicle] }
+  carried_by:  { label: is carried by,  kind: forward, from: [work], to: [vehicle] }
+  reaches:     { label: reaches,        kind: forward, from: [vehicle, work], to: [audience] }
+  serves:      { label: serves,         kind: forward, from: [practice], to: [audience] }
+  produces:    { label: produces,       kind: forward, from: [work, practice], to: [outcome] }
+  received_by: { label: is received by, kind: forward, from: [outcome], to: [audience] }
+  renews:      { label: renews,         kind: return,  from: [outcome], to: [value] }
+  feeds:       { label: feeds,          kind: return,  from: [outcome, audience], to: [capability, practice] }
+
+# --------------------------------------------------------------- provenance
+# Every node and edge declares where it came from. Nothing in this graph
+# pretends to be a fact that no one can check.
+sources:
+  public-web:    Published on a public web page or press item, read directly.
+  public-web-indexed: >-
+    Quoted from a public page through a search index rather than read directly,
+    because the network policy here blocks the host. The wording is the site's
+    own, but confirm it.
+  public-github: A public repository owned by the subject.
+  public-profile: A public professional profile or org listing.
+  inferred:      Read between the lines of the public record. Confirm it.
+  self:          Supplied by the subject.
+  placeholder:   A slot waiting to be filled in. Drawn hollow.
+confidence_levels: [high, medium, low]

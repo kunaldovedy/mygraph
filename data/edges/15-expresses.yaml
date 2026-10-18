@@ -1,0 +1,31 @@
+# Which value each practice and each work actually expresses.
+#
+# This is the edge that keeps stage 1 honest. A value nothing expresses is a
+# poster on a wall, and the validator will not catch that for you; reading the
+# diagram will.
+
+- { src: p-product-design, rel: expresses, dst: v-enhance-humanity, weight: 1.6, source: inferred, confidence: medium }
+- { src: p-product-design, rel: expresses, dst: v-innovation-at-the-edge, source: inferred, confidence: medium }
+
+- { src: p-transformation, rel: expresses, dst: v-freeing-humans, weight: 1.8, source: inferred, confidence: medium }
+- { src: p-transformation, rel: expresses, dst: v-innovation-at-the-edge, weight: 1.6, source: inferred, confidence: medium }
+- { src: p-transformation, rel: expresses, dst: v-enhance-humanity, source: inferred, confidence: medium }
+
+- { src: p-teams, rel: expresses, dst: v-collaboration, weight: 2.0, source: self, confidence: high }
+- { src: p-teams, rel: expresses, dst: v-innovation-at-the-edge, weight: 1.4, source: inferred, confidence: medium }
+
+- { src: p-transparency, rel: expresses, dst: v-data-transparency, weight: 2.0, source: public-web-indexed, confidence: high }
+- { src: p-transparency, rel: expresses, dst: v-information-over-control, weight: 2.0, source: public-web-indexed, confidence: high }
+- { src: p-transparency, rel: expresses, dst: v-shared-knowledge, weight: 1.6, source: inferred, confidence: medium }
+
+- { src: p-art-music, rel: expresses, dst: v-connected-creativity, weight: 2.0, source: public-web, confidence: high }
+- { src: p-art-music, rel: expresses, dst: v-play-as-doorway, weight: 1.8, source: inferred, confidence: medium }
+- { src: p-art-music, rel: expresses, dst: v-machines-can-sing, weight: 1.6, source: inferred, confidence: medium }
+
+- { src: w-turbinophone, rel: expresses, dst: v-machines-can-sing, weight: 2.0, source: public-web, confidence: high }
+- { src: w-turbinophone, rel: expresses, dst: v-play-as-doorway, weight: 1.8, source: inferred, confidence: medium }
+- { src: w-turbinophone, rel: expresses, dst: v-connected-creativity, weight: 1.6, source: inferred, confidence: medium }
+- { src: w-cadence, rel: expresses, dst: v-shared-knowledge, weight: 1.6, source: public-github, confidence: medium }
+- { src: w-goalhive, rel: expresses, dst: v-shared-knowledge, source: public-github, confidence: medium }
+- { src: w-adizes-dvds, rel: expresses, dst: v-shared-knowledge, weight: 1.8, source: inferred, confidence: medium }
+- { src: w-portfolio-site, rel: expresses, dst: v-connected-creativity, source: public-web, confidence: high }

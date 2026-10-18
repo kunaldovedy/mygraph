@@ -1,0 +1,25 @@
+# The return stroke. Outcomes renew the values that started them, and the people
+# served hand something back. Without these edges the graph is a pipeline, not a
+# practice.
+- { src: x-wonder, rel: renews, dst: v-play-as-doorway, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-strangers-collaborate, rel: renews, dst: v-connected-creativity, weight: 2.0, source: inferred, confidence: medium }
+- { src: x-swords-to-song, rel: renews, dst: v-machines-can-sing, weight: 1.8, source: inferred, confidence: medium }
+- { src: x-teams-that-ship, rel: renews, dst: v-collaboration, weight: 1.8, source: inferred, confidence: medium }
+- { src: x-knowledge-portable, rel: renews, dst: v-enhance-humanity, weight: 1.4, source: inferred, confidence: medium }
+- { src: x-practice-grew, rel: renews, dst: v-enhance-humanity, source: inferred, confidence: low }
+- { src: x-cleaner-operations, rel: renews, dst: v-enhance-humanity, source: inferred, confidence: low }
+- { src: x-open-tools, rel: renews, dst: v-connected-creativity, source: inferred, confidence: low }
+
+- { src: a-makers, rel: feeds, dst: c-fabrication, note: A Best in Class award is also feedback, source: inferred, confidence: low }
+- { src: a-colleagues, rel: feeds, dst: c-facilitation, source: inferred, confidence: low }
+- { src: a-developers, rel: feeds, dst: c-sound-programming, source: inferred, confidence: low }
+- { src: a-festival-participants, rel: feeds, dst: p-art-music, weight: 1.4, source: inferred, confidence: low }
+- { src: a-consultants, rel: feeds, dst: c-growth-strategy, source: inferred, confidence: low }
+
+# The new values close their own loops.
+- { src: x-data-democratized, rel: renews, dst: v-data-transparency, weight: 2.0, source: inferred, confidence: medium }
+- { src: x-data-democratized, rel: renews, dst: v-information-over-control, weight: 1.8, source: inferred, confidence: medium }
+- { src: x-open-tools, rel: renews, dst: v-shared-knowledge, weight: 1.8, source: inferred, confidence: medium }
+- { src: x-knowledge-portable, rel: renews, dst: v-shared-knowledge, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-cleaner-operations, rel: renews, dst: v-freeing-humans, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-wonder, rel: renews, dst: v-innovation-at-the-edge, source: inferred, confidence: low }

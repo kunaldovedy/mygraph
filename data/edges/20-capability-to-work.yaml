@@ -1,0 +1,20 @@
+# Capability turns into something that exists.
+- { src: c-cx-strategy, rel: enables, dst: w-cx-transformation, weight: 1.6, source: public-profile, confidence: high }
+- { src: c-systems-change, rel: enables, dst: w-cx-transformation, weight: 1.6, source: public-profile, confidence: high }
+- { src: c-systems-change, rel: enables, dst: w-adizes-russia, source: public-profile, confidence: medium }
+- { src: c-it-operations, rel: enables, dst: w-cx-transformation, source: public-profile, confidence: high }
+- { src: c-facilitation, rel: enables, dst: w-cx-transformation, source: inferred, confidence: low }
+- { src: c-media-production, rel: enables, dst: w-adizes-dvds, weight: 1.6, source: public-profile, confidence: high }
+- { src: c-media-production, rel: enables, dst: w-video-channel, source: public-profile, confidence: high }
+- { src: c-media-production, rel: enables, dst: w-portfolio-site, source: inferred, confidence: medium }
+- { src: c-distributed-production, rel: enables, dst: w-adizes-dvds, weight: 1.8, source: public-profile, confidence: high }
+- { src: c-growth-strategy, rel: enables, dst: w-adizes-russia, weight: 1.8, source: public-profile, confidence: high }
+- { src: c-growth-strategy, rel: enables, dst: w-portfolio-site, source: inferred, confidence: low }
+- { src: c-fabrication, rel: enables, dst: w-turbinophone, weight: 2.0, source: public-web, confidence: high }
+- { src: c-sound-programming, rel: enables, dst: w-cadence, weight: 1.6, source: public-github, confidence: high }
+- { src: c-sound-programming, rel: enables, dst: w-goalhive, source: inferred, confidence: low }
+
+- { src: c-rapid-prototyping, rel: enables, dst: w-cx-transformation, weight: 1.4, source: inferred, confidence: medium }
+- { src: c-data-architecture, rel: enables, dst: w-cx-transformation, weight: 1.6, source: inferred, confidence: medium }
+- { src: c-solution-advisory, rel: enables, dst: w-cx-transformation, weight: 1.4, source: inferred, confidence: medium }
+- { src: c-rapid-prototyping, rel: enables, dst: w-goalhive, source: inferred, confidence: low }

@@ -1,0 +1,36 @@
+# From the centre: what he is guided by, what he practices, where he sits.
+- { src: me, rel: guided_by, dst: v-connected-creativity, weight: 2.0, source: public-web, confidence: high }
+- { src: me, rel: guided_by, dst: v-enhance-humanity, weight: 1.8, source: public-profile, confidence: high }
+- { src: me, rel: guided_by, dst: v-collaboration, weight: 1.6, source: self, confidence: high }
+- { src: me, rel: guided_by, dst: v-information-over-control, weight: 1.8, source: public-web-indexed, confidence: high }
+- { src: me, rel: guided_by, dst: v-data-transparency, weight: 1.6, source: public-web-indexed, confidence: high }
+- { src: me, rel: guided_by, dst: v-freeing-humans, weight: 1.6, source: public-web-indexed, confidence: high }
+- { src: me, rel: guided_by, dst: v-innovation-at-the-edge, weight: 1.6, source: public-web-indexed, confidence: high }
+- { src: me, rel: guided_by, dst: v-shared-knowledge, weight: 1.6, source: public-web, confidence: high }
+- { src: me, rel: guided_by, dst: v-play-as-doorway, weight: 1.4, source: inferred, confidence: medium }
+- { src: me, rel: guided_by, dst: v-machines-can-sing, weight: 1.2, source: inferred, confidence: medium }
+
+- { src: me, rel: practices, dst: p-product-design, weight: 1.6, source: public-web, confidence: high }
+- { src: me, rel: practices, dst: p-transformation, weight: 2.0, source: public-web, confidence: high }
+- { src: me, rel: practices, dst: p-teams, weight: 1.6, source: public-web, confidence: high }
+- { src: me, rel: practices, dst: p-transparency, weight: 1.6, source: public-web, confidence: high }
+- { src: me, rel: practices, dst: p-art-music, weight: 1.8, source: public-web, confidence: high }
+
+- { src: me, rel: formed_by, dst: o-ucsb, source: public-profile, confidence: high }
+- { src: me, rel: formed_by, dst: o-etamu, source: public-profile, confidence: high }
+
+- { src: me, rel: role_at, dst: o-dovedy-llc, note: "Founder", source: public-profile, confidence: high }
+- { src: me, rel: role_at, dst: o-ralliant, note: "Senior Director, Digital CX Transformation, since June 2025", source: public-profile, confidence: high }
+- { src: me, rel: role_at, dst: o-sierra, note: "Consultant, since July 2019", source: public-profile, confidence: high }
+- { src: me, rel: role_at, dst: o-fortive, note: "Senior Director", source: public-profile, confidence: high }
+- { src: me, rel: role_at, dst: o-servicechannel, note: "Director of Information Technology", source: public-profile, confidence: high }
+- { src: me, rel: role_at, dst: o-gordian, note: "Director of Information Technology", source: public-profile, confidence: high }
+
+- { src: me, rel: made, dst: w-turbinophone, weight: 2.0, source: public-web, confidence: high }
+- { src: me, rel: made, dst: w-adizes-dvds, source: public-profile, confidence: high }
+- { src: me, rel: made, dst: w-adizes-russia, source: public-profile, confidence: high }
+- { src: me, rel: made, dst: w-cx-transformation, weight: 1.5, source: public-profile, confidence: medium }
+- { src: me, rel: made, dst: w-cadence, source: public-github, confidence: high }
+- { src: me, rel: made, dst: w-goalhive, source: public-github, confidence: high }
+- { src: me, rel: made, dst: w-portfolio-site, source: public-web, confidence: high }
+- { src: me, rel: made, dst: w-video-channel, source: public-profile, confidence: medium }

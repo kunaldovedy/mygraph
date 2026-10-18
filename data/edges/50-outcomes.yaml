@@ -1,0 +1,33 @@
+# What changed, and who received it.
+- { src: w-turbinophone, rel: produces, dst: x-wonder, weight: 2.0, source: inferred, confidence: medium }
+- { src: w-turbinophone, rel: produces, dst: x-strangers-collaborate, weight: 1.8, source: inferred, confidence: medium }
+- { src: w-turbinophone, rel: produces, dst: x-swords-to-song, weight: 2.0, source: public-web, confidence: high }
+- { src: w-adizes-dvds, rel: produces, dst: x-knowledge-portable, weight: 1.8, source: public-profile, confidence: high }
+- { src: w-adizes-russia, rel: produces, dst: x-practice-grew, weight: 1.8, source: public-profile, confidence: high }
+- { src: w-cx-transformation, rel: produces, dst: x-cleaner-operations, weight: 1.6, source: inferred, confidence: low }
+- { src: w-cx-transformation, rel: produces, dst: x-teams-that-ship, source: inferred, confidence: medium }
+- { src: w-cadence, rel: produces, dst: x-open-tools, source: public-github, confidence: medium }
+- { src: w-goalhive, rel: produces, dst: x-open-tools, source: public-github, confidence: medium }
+- { src: w-video-channel, rel: produces, dst: x-knowledge-portable, source: inferred, confidence: low }
+- { src: p-teams, rel: produces, dst: x-teams-that-ship, weight: 1.8, source: inferred, confidence: medium }
+- { src: p-art-music, rel: produces, dst: x-wonder, weight: 1.4, source: inferred, confidence: medium }
+
+- { src: x-wonder, rel: received_by, dst: a-festival-participants, source: inferred, confidence: medium }
+- { src: x-wonder, rel: received_by, dst: a-museum-visitors, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-strangers-collaborate, rel: received_by, dst: a-festival-participants, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-strangers-collaborate, rel: received_by, dst: a-musicians, source: inferred, confidence: low }
+- { src: x-swords-to-song, rel: received_by, dst: a-museum-visitors, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-swords-to-song, rel: received_by, dst: a-makers, source: public-web, confidence: medium }
+- { src: x-teams-that-ship, rel: received_by, dst: a-colleagues, weight: 1.8, source: inferred, confidence: medium }
+- { src: x-cleaner-operations, rel: received_by, dst: a-field-teams, weight: 1.6, source: inferred, confidence: low }
+- { src: x-cleaner-operations, rel: received_by, dst: a-industrial-customers, source: inferred, confidence: low }
+- { src: x-knowledge-portable, rel: received_by, dst: a-consultants, weight: 1.8, source: public-profile, confidence: high }
+- { src: x-knowledge-portable, rel: received_by, dst: a-executives, source: public-profile, confidence: medium }
+- { src: x-practice-grew, rel: received_by, dst: a-consultants, weight: 1.6, source: public-profile, confidence: high }
+- { src: x-open-tools, rel: received_by, dst: a-developers, source: public-github, confidence: medium }
+
+- { src: p-transparency, rel: produces, dst: x-data-democratized, weight: 2.0, source: public-web-indexed, confidence: high }
+- { src: w-cx-transformation, rel: produces, dst: x-data-democratized, source: inferred, confidence: medium }
+- { src: x-data-democratized, rel: received_by, dst: a-executives, weight: 1.6, source: inferred, confidence: medium }
+- { src: x-data-democratized, rel: received_by, dst: a-field-teams, weight: 1.4, source: inferred, confidence: medium }
+- { src: x-data-democratized, rel: received_by, dst: a-industrial-customers, source: inferred, confidence: low }

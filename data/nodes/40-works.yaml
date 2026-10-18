@@ -1,0 +1,107 @@
+# Stage 4 — the things he made.
+#
+# Only publicly visible work is listed here. Private repositories and client
+# specifics stay out of version control. Add those in data/private/, which is
+# git-ignored. See README.
+- id: w-turbinophone
+  type: work
+  label: The Turbinophone
+  subtitle: A jet engine you play with ball bearings
+  summary: >-
+    A J79 turbojet compressor, taken from an engine that pushed an F-4 Phantom
+    past Mach 2 on 17,000 pounds of thrust, rebuilt as a collaborative musical
+    instrument. Drop a steel ball bearing in the top. It strikes the blades,
+    which ring like tuning forks. The blades get shorter on the way down, so the
+    pitch rises as the bearing falls.
+  source: public-web
+  confidence: high
+  refs:
+    - http://www.turbinophone.com/
+    - https://www.kickstarter.com/projects/kdovedy/the-turbinophone-burning-man-2013
+  props:
+    years: 2013 to present
+    material: J79 turbojet compressor section
+    award: Best in Class, Maker Faire Bay Area 2014
+    home: Oakland Aviation Museum
+
+- id: w-adizes-dvds
+  type: work
+  label: 34 educational DVDs
+  subtitle: Management teaching made portable
+  summary: >-
+    Led production of thirty-four educational DVDs for the Adizes Institute,
+    coordinating graphics and animation teams plus translators and transcribers
+    in six countries.
+  source: public-profile
+  confidence: high
+  props:
+    volume: 34 titles
+    countries: 6
+
+- id: w-adizes-russia
+  type: work
+  label: Adizes digital engagement, Russia
+  subtitle: A consulting practice that grew
+  summary: >-
+    A digital engagement strategy for the Adizes Institute in Russia that grew
+    their consulting practice.
+  source: public-profile
+  confidence: high
+
+- id: w-cx-transformation
+  type: work
+  label: Enterprise CX transformation programmes
+  subtitle: The day job, across four companies
+  summary: >-
+    Successive digital customer experience and IT transformation programmes at
+    Gordian, ServiceChannel, Fortive and now Ralliant. The public record names
+    the seats; the detail of each programme is not public.
+  source: public-profile
+  confidence: medium
+
+- id: w-cadence
+  type: work
+  label: cadence
+  subtitle: Web audio sketches
+  summary: >-
+    A public repository holding Tone.js and web component bundles. Browser
+    sound as a working material.
+  source: public-github
+  confidence: medium
+  refs: [https://github.com/kunaldovedy/cadence]
+
+- id: w-goalhive
+  type: work
+  label: goalhive
+  subtitle: A public side project
+  summary: >-
+    A public repository. Listed here because it is public; describe it properly
+    when you edit this file.
+  source: public-github
+  confidence: low
+  refs: [https://github.com/kunaldovedy/goalhive]
+
+- id: w-portfolio-site
+  type: work
+  label: kunaldovedy.com
+  subtitle: The front door
+  summary: >-
+    The portfolio site that carries the Connected Creativity line and the
+    project write-ups.
+  source: public-web
+  confidence: high
+  refs: [https://www.kunaldovedy.com/]
+
+- id: w-video-channel
+  type: work
+  label: Video and screen work
+  subtitle: From Project Runway to a YouTube channel
+  summary: >-
+    Screen credits in additional crew, visual effects and sound department,
+    including Project Runway and Models of the Runway, plus a personal YouTube
+    channel.
+  source: public-profile
+  confidence: medium
+  refs:
+    - https://www.imdb.com/name/nm3366460/
+    - https://www.youtube.com/c/KunalDovedy

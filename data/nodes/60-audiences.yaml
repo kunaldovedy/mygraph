@@ -1,0 +1,92 @@
+# Stage 6 — who is on the other end. This is the stage most service graphs get
+# wrong, because it is easier to list what you made than who received it.
+- id: a-field-teams
+  type: audience
+  label: Field service and facilities teams
+  summary: >-
+    The technicians, dispatchers and facilities managers whose working day
+    changes when the software behind them changes.
+  source: inferred
+  confidence: medium
+
+- id: a-industrial-customers
+  type: audience
+  label: Industrial and enterprise customers
+  summary: >-
+    The customers of precision instrument, construction data and field service
+    businesses, who meet the company through a digital experience.
+  source: inferred
+  confidence: medium
+
+- id: a-executives
+  type: audience
+  label: Executives and leadership teams
+  summary: >-
+    The people who have to decide, fund and defend a transformation, and who
+    are the audience for the Adizes methodology.
+  source: public-profile
+  confidence: medium
+
+- id: a-consultants
+  type: audience
+  label: Consultants and practitioners
+  summary: >-
+    The Adizes practitioners who used the DVDs, and the Russian practice that
+    grew from the digital engagement work.
+  source: public-profile
+  confidence: high
+
+- id: a-colleagues
+  type: audience
+  label: Colleagues and direct teams
+  summary: >-
+    The people he leads. They receive the practice most directly and carry it
+    furthest after he moves on.
+  source: inferred
+  confidence: medium
+
+- id: a-festival-participants
+  type: audience
+  label: Festival participants
+  summary: >-
+    Strangers in the desert who found an object with no instructions and worked
+    out how to play it together.
+  source: public-web
+  confidence: high
+
+- id: a-museum-visitors
+  type: audience
+  label: Museum visitors and families
+  summary: >-
+    People at the Oakland Aviation Museum, including children who now associate
+    a fighter engine with music rather than war.
+  source: public-web
+  confidence: high
+
+- id: a-makers
+  type: audience
+  label: Makers and engineers
+  summary: The Maker Faire crowd, who judged it Best in Class in 2014.
+  source: public-web
+  confidence: high
+
+- id: a-musicians
+  type: audience
+  label: Musicians and sound artists
+  summary: People who take the instrument, and the browser sound work, seriously.
+  source: inferred
+  confidence: low
+
+- id: a-backers
+  type: audience
+  label: Backers and patrons
+  summary: The Kickstarter backers who paid for a jet engine to become an instrument.
+  source: public-web
+  confidence: high
+
+- id: a-developers
+  type: audience
+  label: Developers
+  summary: Anyone who reads or forks the public repositories.
+  source: public-github
+  confidence: medium

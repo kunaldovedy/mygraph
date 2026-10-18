@@ -1,0 +1,38 @@
+# Each practice draws on capabilities. This is where a practice stops being a
+# slogan and starts being something you can actually do on a Tuesday.
+- { src: p-product-design, rel: uses, dst: c-cx-strategy, weight: 1.6, source: public-profile, confidence: high }
+- { src: p-product-design, rel: uses, dst: c-media-production, source: inferred, confidence: medium }
+- { src: p-product-design, rel: uses, dst: c-facilitation, source: inferred, confidence: medium }
+
+- { src: p-transformation, rel: uses, dst: c-systems-change, weight: 1.8, source: public-profile, confidence: high }
+- { src: p-transformation, rel: uses, dst: c-cx-strategy, weight: 1.6, source: public-profile, confidence: high }
+- { src: p-transformation, rel: uses, dst: c-it-operations, weight: 1.4, source: public-profile, confidence: high }
+- { src: p-transformation, rel: uses, dst: c-growth-strategy, source: public-profile, confidence: medium }
+- { src: p-transformation, rel: uses, dst: c-facilitation, source: inferred, confidence: medium }
+
+- { src: p-teams, rel: uses, dst: c-facilitation, weight: 1.6, source: inferred, confidence: medium }
+- { src: p-teams, rel: uses, dst: c-distributed-production, weight: 1.6, source: public-profile, confidence: high }
+- { src: p-teams, rel: uses, dst: c-systems-change, source: inferred, confidence: medium }
+
+- { src: p-art-music, rel: uses, dst: c-fabrication, weight: 1.8, source: public-web, confidence: high }
+- { src: p-art-music, rel: uses, dst: c-sound-programming, weight: 1.4, source: public-github, confidence: medium }
+- { src: p-art-music, rel: uses, dst: c-media-production, source: public-profile, confidence: medium }
+
+# Where the capabilities came from.
+- { src: c-media-production, rel: formed_by, dst: o-ucsb, source: public-profile, confidence: high }
+- { src: c-growth-strategy, rel: formed_by, dst: o-etamu, source: public-profile, confidence: high }
+- { src: c-it-operations, rel: formed_by, dst: o-servicechannel, source: public-profile, confidence: high }
+- { src: c-cx-strategy, rel: formed_by, dst: o-fortive, source: public-profile, confidence: medium }
+- { src: c-distributed-production, rel: formed_by, dst: o-adizes, source: public-profile, confidence: high }
+
+# The fifth practice, and the three Sierra services it runs on.
+- { src: p-transparency, rel: uses, dst: c-data-architecture, weight: 2.0, source: public-web-indexed, confidence: high }
+- { src: p-transparency, rel: uses, dst: c-systems-change, weight: 1.4, source: inferred, confidence: medium }
+- { src: p-transparency, rel: uses, dst: c-cx-strategy, source: inferred, confidence: low }
+- { src: p-product-design, rel: uses, dst: c-rapid-prototyping, weight: 1.8, source: public-web-indexed, confidence: high }
+- { src: p-transformation, rel: uses, dst: c-solution-advisory, weight: 1.6, source: public-web-indexed, confidence: high }
+- { src: p-transformation, rel: uses, dst: c-data-architecture, source: inferred, confidence: medium }
+
+- { src: c-rapid-prototyping, rel: formed_by, dst: o-sierra, source: public-web-indexed, confidence: high }
+- { src: c-data-architecture, rel: formed_by, dst: o-sierra, source: public-web-indexed, confidence: high }
+- { src: c-solution-advisory, rel: formed_by, dst: o-sierra, source: public-web-indexed, confidence: high }

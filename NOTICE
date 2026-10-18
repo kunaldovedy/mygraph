@@ -1,0 +1,15 @@
+Required Notice: Copyright 2026 Kunal Dovedy (https://kunaldovedy.com)
+
+mygraph — a service graph, by Kunal Dovedy.
+Licensed under the PolyForm Small Business License 1.0.0. See LICENSE.md.
+Free for individuals and small companies. Larger companies need a paid
+licence. See COMMERCIAL.md.
+
+The line above beginning "Required Notice:" is binding. Under the Notices
+section of the licence, anyone who gets a copy of any part of this software
+from you must also receive that line, together with the licence or its URL.
+Keep this file with the software, and keep the notice visible in anything you
+build from it.
+
+The files under data/ are not covered by that licence. They describe a real
+person. See data/README.md.

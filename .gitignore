@@ -1,0 +1,19 @@
+# The build directory is derived. `make build` writes it again in under a second.
+build/*
+!build/.gitkeep
+
+# Private overlay: nodes and edges you do not want in version control.
+# The loader reads it when it exists, so a client name or an unlaunched project
+# can sit in your working copy without ever being committed.
+data/private/*
+!data/private/README.md
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
