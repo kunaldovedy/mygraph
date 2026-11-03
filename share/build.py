@@ -137,10 +137,10 @@ afterwards.
 ## Conversation starters
 
 ```
+Draft my graph from what you already know about me
 Map how I serve the world
 I want to see who my work actually reaches
 Help me find the gap between what I value and what I make
-Start the interview
 ```
 
 ## Capabilities
@@ -149,11 +149,24 @@ Turn **Canvas on** if your plan has it: a canvas renders HTML, which is what
 lets the GPT put the graph itself in the conversation rather than a link to it.
 
 Turn **Code Interpreter ON** as well. It is the fallback, and it writes the
-page out as a file you can download, plus a single tappable link that carries
-the whole graph.
+page out as a file you can open, plus a single tappable link that carries the
+whole graph.
 
-Turn **Web Browsing** and **DALL-E** off. Neither helps and both give it room
-to wander.
+Turn **Web Browsing ON** if you want it to seed the first draft from somebody's
+public pages. Off is fine too; it just has less to start from.
+
+Turn **image generation OFF**. The instructions forbid pictures, because a
+generated picture of somebody else's graph above the real link is the one thing
+that stops people tapping it, and a switch is more reliable than an
+instruction.
+
+## One thing to know about seeding
+
+The first draft is built from what the model already knows about the person,
+which means their memory and their past conversations. A custom GPT may not be
+able to see chats held outside it, so the seeding is at its best in an ordinary
+chat with these instructions pasted in, and thinnest inside a GPT. Either way
+it falls back on what it is given, and says which it used.
 
 ## Sharing
 

@@ -314,7 +314,7 @@ def test_the_viewer_carries_the_same_prompt() -> None:
     assert block, "the viewer has nowhere to keep the prompt"
     carried = base64.b64decode(block.group(1)).decode()
     assert _template() in carried
-    assert carried.startswith("You are going to interview me")
+    assert "serve the world" in carried.splitlines()[0]
 
 
 def test_no_closing_script_tag_hides_inside_the_viewer() -> None:

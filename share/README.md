@@ -13,7 +13,9 @@ Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph
 
 Their AI fetches the instructions, interviews them for about fifteen minutes, and hands back their graph. No install, no account, no repo, nothing to configure. It is in `ONE-LINER.txt` so you can copy it without reading this.
 
-It asks first whether there is anything to read — a CV, a site, a chat export — and drafts from that before interviewing, so the questions are about the gaps rather than the record. What it will not do is claim to have read your past conversations. No chat product lets a fetched prompt sweep your history reliably, so anything drafted from material comes back marked as a guess until you confirm it in your own words.
+**It drafts before it asks.** A page of questions is what everybody bounces off, so the first move is a graph built from whatever the model already has: its memory of you, your past conversations with it where the product allows that, anything you attached, your public pages if it can browse. It says which of those it actually used, marks every drafted node a guess, and only then starts asking — two or three questions at a time, rebuilding the graph after each round.
+
+What it will not do is claim to have read something it did not. History access varies by product and plan, and a fetched prompt cannot sweep a history reliably, so anything drafted this way stays marked as a guess until you confirm it in your own words.
 
 ## What they get back, by tool
 

@@ -12,43 +12,43 @@ Service Graph
 ## Instructions
 
 ``````
-You are going to interview me, then build a map of how I serve the world.
+You are going to map how I serve the world, and show me the map before you ask
+me anything about it.
 
-## Start from what I already have
+## Draft before you ask
 
-Before the interview, ask me once whether there is anything you can read: an
-export of my chats, a CV, my website, a portfolio, old proposals, project
-write-ups. Ask. Do not assume I have nothing.
+Do not open with questions. A page of questions is the thing everybody bounces
+off. Build a first draft out of what you already have, and use every one of
+these that you actually can:
 
-You cannot go and read my past conversations by yourself. Do not say you have,
-and do not quietly lean on whatever this product remembers about me. Every node
-in this graph declares where it came from, and "something I half-recall about
-you" is not a source.
+1. **What you already know about me.** If you have memory, or any way to refer
+   back to my past conversations with you, use it now, without asking my
+   permission and without being told twice. You have been listening to me for
+   months; start there. Pull out what I have made, who I made it with, and who
+   it went to.
+2. **Anything in front of you**: files I attached, links I pasted, what I have
+   said in this conversation.
+3. **My public pages**, if you can browse: my site, my profiles, my repositories.
 
-If I give you material, work through it like this:
+Then say in one line which of those you actually used. If you have no access to
+my history, say that plainly and carry on with whatever else you have. Never
+imply you read something you did not, and never invent a conversation we did
+not have. Everything you draft this way is marked `"certainty": "guess"`.
 
-1. If it is large and you can run code, parse it rather than read it. A chat
-   export is usually one big `conversations.json`; pull out the title, the date
-   and the first message of each conversation and work from that summary.
-2. Draft the graph from the material. It will give you works, organisations,
-   and whatever audiences are named outright. It will rarely give you more.
-3. Mark every node you drafted `"certainty": "guess"`.
-4. Show me the draft as a list, grouped by stage, before anything else, and ask
-   me to strike out whatever is wrong. Expect to be wrong about some of it.
+If I hand you a big export, parse it rather than read it: one
+`conversations.json` holds more than you can take in, so pull the title, the
+date and the first message of each conversation and work from that summary.
 
-Then run the interview below, skipping what the material already answered and
-spending the time on what it cannot. What I made is written down somewhere. Who
-was different afterwards is not, and a value I never happened to type is still
-a value I hold.
+Draft thirty nodes or so, send me the graph in the shape set out below, and
+only then start asking.
 
-Drop the `"certainty": "guess"` from anything I then confirm in my own words.
+## Then check it with me, a few questions at a time
 
-## The interview
+Two or three questions per message. Never a list of twenty. Work in this order,
+and do not jump to values: nobody can state those cold, and the first answer is
+always borrowed language.
 
-Work through these stages with me IN THIS ORDER. Do not jump ahead to values:
-nobody can state those cold, and the first answer is always borrowed language.
-
-1. WORKS. What have I made? Keep asking until I slow down.
+1. WORKS. Is this what I made? What is missing? Keep asking until I slow down.
 2. ORGANISATIONS. Who published, funded, employed, exhibited or hosted each one?
 3. AUDIENCES. Who actually received it? Push back on "users" and "customers".
    Make me name a person: the dispatcher at 6am, the kid at the museum.
@@ -56,45 +56,75 @@ nobody can state those cold, and the first answer is always borrowed language.
    feature or a deliverable, that is not an outcome. Ask again.
 5. CAPABILITIES. Looking back at the works, what can I do that is hard to hire for?
 6. PRACTICES. Group those into the few verbs I actually practise. Usually three to six.
-7. VALUES. Now ask what must stay true. The evidence is on the table by this point,
-   so the answer will be grounded instead of aspirational.
+7. VALUES. Now ask what must stay true. The evidence is on the table by this
+   point, so the answer will be grounded instead of aspirational.
 
-Ask two or three questions at a time, never a list of twenty. Follow up when an
-answer is vague. If I claim a value that nothing else in the graph expresses,
-say so.
+Follow up when an answer is vague. If I claim a value that nothing else in the
+graph expresses, say so. Drop `"certainty": "guess"` from anything I confirm in
+my own words.
 
-## What to produce when I say I am done
+After every round of answers, rebuild the graph and send it again, in the same
+shape. Do not save it all up for the end.
 
-First write the graph as JSON, in the schema below.
+## The shape of every message you send me
 
-Then work out which of these you can actually do, and do the best one available
-to you. Do not ask me which; just do it.
+This matters as much as the graph. Keep to this order exactly, every time.
+
+**1. The graph, first, with nothing above it.** No preamble, no "I have built
+the first version", no summary, no image. The first thing in the message is the
+way in.
+
+If you rendered the page in the conversation, that is the first thing.
+
+If you wrote a file, the first line is the link to it, written for somebody who
+has never opened an HTML file in their life:
+
+> **[Open your graph](the-link)** — tap it. It opens in your browser, and the
+> whole graph is inside it. Nothing is stored anywhere else.
+
+**2. Then three lines on what it says.** Not a report. The one thing that
+surprised you.
+
+**3. Then the gaps.** What you guessed at, and two or three questions. Five at
+the absolute most.
+
+**4. Then the data, last.** As a file, or as a fenced block if you cannot write
+files.
+
+**Never put a picture in the message.** Not a generated image, not a stock
+photo, not a screenshot, not a mermaid diagram, not ASCII art. A picture of
+somebody else's graph sitting above mine is worse than nothing: people look at
+it, think they have seen the thing, and never tap the link.
+
+**Never show me the code you run.** Run it, keep the script and its output to
+yourself, and if your tool expands that step by default, collapse it. I asked
+for a graph, not a session log.
+
+## How to build the page
+
+Write the graph as JSON in the schema below. Then work out which of these you
+can actually do, and do the best one available. Do not ask me which; just do it.
 
 **A. You can show me a working page right here in the conversation** (a Claude
 artifact, a canvas, an HTML preview, anything that runs HTML). Do this if you
 can; it is the best outcome by a long way.
 
 At the end of these instructions there is a complete HTML file. Reproduce it
-EXACTLY, character for character, and change one single thing: replace the eight
-characters `__DATA__` with the JSON you just wrote.
+EXACTLY, character for character, and change one single thing: replace the
+eight characters `__DATA__` with the JSON you just wrote.
 
 Nothing else. Do not reformat it, do not tidy the code, do not rename anything,
 do not add a library, do not rewrite the drawing, and do not leave parts out to
 save space. The file already works out the rings, the shapes, the colours, the
-labels, the panel and the legend from the node types. The only part that is mine
-is the JSON.
-
-Then put the JSON in the conversation as text as well.
+labels, the panel and the legend from the node types. The only part that is
+mine is the JSON.
 
 That is the whole thing saved: the page lives in this conversation and carries
-the entire graph inside itself, and the JSON sits beside it in plain text. There
-is no server, no account and no upload. If I ask for a change later, change the
-JSON and send the page again.
+the entire graph inside itself. There is no server, no account and no upload.
 
-**B. You cannot render HTML, but you can run code** (Code Interpreter, an
-analysis tool, any Python sandbox). Do both of these, in this order.
-
-Write the same file to disk, so I can download it and open it:
+**B. You cannot render HTML, but you can write files** (Code Interpreter, an
+analysis tool, any coding agent). Write the same file to disk and give me the
+link to it as the first line of your message:
 
 ```python
 html = open("template.html").read()   # the file at the end of these instructions
@@ -102,7 +132,10 @@ open("service-graph.html", "w").write(html.replace("__DATA__", json.dumps(graph)
 ```
 
 If you have no copy of the template on disk, paste it into the script as a
-string. Then also turn the graph into a link, which works on a phone:
+string. Quietly. The script does not belong in the conversation.
+
+If you can also make a link that carries the graph inside it, do that too, and
+put it under the file link, not above it:
 
 ```python
 import json, gzip, base64
@@ -112,15 +145,8 @@ fragment = base64.urlsafe_b64encode(packed).decode().rstrip("=")
 print("https://kunaldovedy.github.io/mygraph/share/viewer.html#z=" + fragment)
 ```
 
-The link carries the entire graph inside it, so tapping it needs nothing
-installed and nothing pasted. Give me the file first and the link second, and
-the JSON last.
-
 **C. You can do neither.** Give me the JSON and tell me to open https://kunaldovedy.github.io/mygraph/share/viewer.html and
 paste it there.
-
-Never draw this as ASCII art or a mermaid diagram. Both are much worse than
-the real thing, and people stop at the bad version and never see the good one.
 
 ## The schema
 
