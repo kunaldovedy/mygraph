@@ -19,13 +19,18 @@ What it will not do is claim to have read something it did not. History access v
 
 ### If it behaves like an older version
 
-`raw.githubusercontent.com` sends `cache-control: max-age=300`, and chat tools cache a fetched page on top of that. For about five minutes after you edit `prompt.md`, and sometimes longer inside one conversation, a model can still be reading the previous version. Wait, start a fresh chat, or bust the cache by hand:
+`raw.githubusercontent.com` sends `cache-control: max-age=300`, and chat tools cache a fetched page on top of that. Measured once after a push: the `main` URL kept serving the old file for about four minutes, and a conversation that already fetched it holds its own copy for longer. This looks exactly like an edit that did not work.
+
+**A query string does not help.** The CDN keys on the path alone, so `?v=2` returns the same stale object with the same ETag; measured, not assumed. What works:
+
+- **Wait**, then start a *fresh* chat. The old conversation keeps its own copy of the page.
+- **Pin the commit** when you need it now. That URL is immutable, so it is never stale:
 
 ```
-Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph/main/share/prompt.md?v=2
+https://raw.githubusercontent.com/kunaldovedy/mygraph/<full-commit-sha>/share/prompt.md
 ```
 
-The query string is ignored by GitHub and changes the cache key. Bump the number. Keep the clean URL as the one you give people.
+Keep the `main` URL as the one you give people. It is the one that keeps improving.
 
 ## What they get back, by tool
 
