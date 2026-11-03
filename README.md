@@ -115,6 +115,28 @@ Regenerate its data after editing any YAML:
 make site-data SITE=/path/to/kunaldovedy.com
 ```
 
+## Send it to someone who does not use a terminal
+
+Everything below this point assumes Python, a clone and a Makefile. Most people
+will not do that.
+
+[`share/`](share/) is the version for everyone else. One HTML file, no install,
+works with **any** AI:
+
+1. They open `share/viewer.html` by double-clicking it.
+2. They copy the prompt on the page into ChatGPT, Claude, Copilot or Gemini.
+   It interviews them for about fifteen minutes.
+3. They paste the JSON it produces back into the page. The graph appears.
+
+Then **Save as one file** gives them a single self-contained HTML to send on, or
+**Copy link** packs the whole graph into a URL.
+
+The model never has to get the drawing right. It only writes a list of nodes
+and a list of connections; stages, colours, shapes, layout, PageRank and reach
+are computed in the page. That is why a graph made in ChatGPT and one made in
+Claude come out identical, and it is forgiving about the specific ways chat
+models are sloppy. See [share/README.md](share/README.md).
+
 ## Let Claude build yours
 
 The repository ships a Claude Code agent skill at
@@ -235,6 +257,7 @@ viz/index.html         the page, with no build step and no dependencies
 tests/test_graph.py    36 tests, including rules about the graph itself
 docs/design.md         why it looks the way it does
 integrations/          the /graph route for kunaldovedy.com
+share/                 one HTML file anyone can use with any AI, no install
 .claude/skills/        the agent skill, for building a graph with Claude
 ```
 
