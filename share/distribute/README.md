@@ -22,7 +22,7 @@ Everything reduces to these, and only one of them is per-tool.
 
 ## How to actually distribute it
 
-**Tier 1, the one link.** Host `share/viewer.html` and send that URL. Nothing to install, nothing to configure, works with whatever AI the person already has open. This is what goes in a post, an email signature, or a message to your coach. It is the only tier that reaches people who will not set anything up, which is most people.
+**Tier 1, the two lines.** Send someone the contents of `share/ONE-LINER.txt`: a sentence and a link to `share/prompt.md`. Their AI fetches the instructions itself. Nothing to install, nothing to configure, no wrapper needed. This is what goes in a post, an email signature, or a message to your coach, and it is the only tier that reaches people who will not set anything up, which is most people.
 
 **Tier 2, the per-tool wrappers.** For people who will use it more than once. Each file here is ready to paste:
 
@@ -46,10 +46,11 @@ Same for GitHub Pages: Settings, Pages, deploy from `main`. The proxy here block
 
 In order, if you only do some:
 
-1. **Host the viewer.** Turns the whole thing into one link. Biggest return for the least work.
-2. **The ChatGPT custom GPT.** Most people, including your coach, are on ChatGPT. A link they can open and keep.
-3. **`AGENTS.md` in this repo.** Distributes itself to every coding agent, for free, forever.
-4. The rest, when someone asks.
+1. **Turn on GitHub Pages.** Settings, Pages, deploy from `main`. Without a hosted viewer, a model that writes a link has nowhere to point it, so only the Claude path works end to end. This is the single action that unlocks the rest.
+2. **Send the two lines** from `share/ONE-LINER.txt`. No wrapper required; this already reaches everyone.
+3. **The ChatGPT custom GPT**, for people who will use it repeatedly and want it in their sidebar. Turn Code Interpreter on when you build it: that is what lets it hand back a tappable link.
+4. **`AGENTS.md`** is already at the repo root and distributes itself to every coding agent, forever.
+5. The rest, when someone asks.
 
 ## Two differences that are not cosmetic
 
@@ -61,12 +62,11 @@ The wrappers are not the same text with different headers.
 
 ## Keeping them in step
 
-The prompt lives in exactly one place, inside `share/viewer.html`. Everything in this folder, and `share/PROMPT.md`, is generated from it:
+The prompt lives in exactly one place, `share/prompt.md`, which is also the file models fetch. Everything in this folder, the viewer's copy of the prompt, and the root `AGENTS.md`, is generated from it:
 
 ```bash
-cd share/distribute
-python3 build_wrappers.py
-python3 build_wrappers.py --viewer-url https://your-host/viewer.html
+python3 share/build.py
+python3 share/build.py --viewer-url https://your-host/viewer.html
 ```
 
 Do not hand-edit a generated file. The banner at the top of each says so, and the next run will overwrite it.

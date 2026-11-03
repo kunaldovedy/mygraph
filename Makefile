@@ -44,6 +44,6 @@ site-data:       ## Write the web payload into a site checkout (SITE=/path/to/si
 .PHONY: site-data
 
 wrappers:        ## Regenerate the per-tool chat wrappers from the canonical prompt
-	$(PY) share/distribute/build_wrappers.py $(if $(VIEWER_URL),--viewer-url $(VIEWER_URL),)
+	$(PY) share/build.py $(if $(VIEWER_URL),--viewer-url $(VIEWER_URL),)
 
 .PHONY: wrappers

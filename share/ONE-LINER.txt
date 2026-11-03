@@ -1,0 +1,2 @@
+Build me a service graph of how I serve the world.
+Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph/main/share/prompt.md
