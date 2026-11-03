@@ -38,15 +38,37 @@ Uncompressed is unusable: chat apps and mail clients mangle URLs that long. Gzip
 
 Verified both directions: a link made by Python opens the full 71-node graph on an iPhone viewport with zero horizontal overflow, and a link made in the browser decompresses in Python.
 
-## Hosting, which is the one thing left
+## Hosting, and why it costs you nothing
 
 A link can only open the viewer if the viewer is at a URL. `raw.githubusercontent.com` serves HTML as `text/plain`, so it will not do.
 
-Turn on GitHub Pages: **Settings, Pages, deploy from `main`**. The viewer then lives at `https://kunaldovedy.github.io/mygraph/share/viewer.html`, which is the URL already baked into the generated files. If you host it anywhere else:
+**It should never be your own server.** Nothing here touches kunaldovedy.com or your Vercel project, and it should not. This is one immutable static file with no backend.
+
+The measured numbers, so the decision is not a guess:
+
+| | |
+|---|---|
+| `viewer.html` on disk | 82.0 KB |
+| Served, gzipped | **23.2 KB** |
+| Page loads per 100 GB | **4.5 million** |
+
+100 GB is the usual free-tier monthly allowance. And that is the worst case, because the file is immutable and every CDN and browser caches it, so returning visitors cost nothing at all.
+
+In order of least exposure:
+
+1. **GitHub Pages.** Settings, Pages, deploy from `main`. This is GitHub's bandwidth on a `github.io` address. It is not your website and there is no card attached: the documented limit is a soft one, and GitHub emails you rather than billing you. *(Check the current figure yourself; I could not reach their docs from where this was built.)*
+2. **Cloudflare Pages or Netlify.** Separate free accounts, nothing shared with your existing hosting. Deploy from the same repo.
+3. **Somebody else's copy.** The viewer has no absolute self-references, so anyone can host it. The URL is a build flag, not a constant.
 
 ```bash
 python3 share/build.py --viewer-url https://your-host/viewer.html
 ```
+
+### If you host nothing at all
+
+The tool still works. **Save as one file** produces a self-contained HTML that runs offline forever, and you can hand that around directly or attach it to a GitHub release.
+
+What you lose is only the tappable link, which means someone on a phone has to copy JSON and paste it rather than tapping once.
 
 ## Why it works with any AI
 
@@ -80,6 +102,8 @@ Run `python3 share/build.py` or `make wrappers` after editing `prompt.md`. Never
 
 ## Privacy
 
-Nothing is uploaded, because there is nowhere to upload it to. The graph lives in the page, in the link if one is made, and in the file if one is saved.
+Your graph is never uploaded, because there is nowhere to upload it to. It lives in the page, in the link if one is made, and in the file if one is saved.
+
+One correction to an earlier version of this file, which claimed no network calls: the page requests its fonts from Google Fonts, so Google sees that it was loaded, though never what is in it. Every font has a real fallback, so the page works fully offline and simply looks plainer. If that one request is unwelcome, delete the `<link rel="stylesheet">` on line 2 of `viewer.html`; nothing else changes.
 
 A link or a saved file carries the whole graph inside it, so both are as public as whoever you send them to. And whatever someone types into ChatGPT is subject to that company's terms, which is worth saying out loud before anybody maps their inner life into one.
