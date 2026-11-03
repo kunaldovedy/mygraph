@@ -53,14 +53,14 @@ import json, gzip, base64
 graph = {...}   # the JSON you just wrote, as a Python dict
 packed = gzip.compress(json.dumps(graph, separators=(",", ":")).encode(), 9)
 fragment = base64.urlsafe_b64encode(packed).decode().rstrip("=")
-print("https://kunaldovedy.github.io/mygraph/share/viewer.html#z=" + fragment)
+print("https://kunaldovedy.github.io/mygraph/#z=" + fragment)
 ```
 
 The link carries the entire graph inside it. Tapping it opens the graph, on a
 phone or anywhere else, with nothing to install and nothing to paste. Give it
 to me as a plain tappable link.
 
-**C. You can do neither.** Give me the JSON and tell me to open https://kunaldovedy.github.io/mygraph/share/viewer.html and
+**C. You can do neither.** Give me the JSON and tell me to open https://kunaldovedy.github.io/mygraph/ and
 paste it there.
 
 Never draw this as ASCII art or a mermaid diagram. Both are much worse than

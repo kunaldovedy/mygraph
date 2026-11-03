@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Service Graph</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Map how you serve the world. Works with any AI, nothing to install.">
+<link rel="canonical" href="share/viewer.html">
+<!-- Keeps the shared URL short. A graph travels in the fragment, so the
+     fragment has to survive the hop: location.replace carries it explicitly
+     rather than trusting a meta refresh to. -->
+<script>location.replace("share/viewer.html" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=share/viewer.html">
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; margin: 0; padding: 48px 24px;
+         background: #eef0f3; color: #14171c; }
+  main { max-width: 32rem; margin: 0 auto; }
+  a { color: #2a78d6; }
+</style>
+<main>
+  <h1>Service Graph</h1>
+  <p>Taking you to the viewer. If nothing happens,
+     <a href="share/viewer.html">open it here</a>.</p>
+</main>

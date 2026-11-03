@@ -56,7 +56,14 @@ The measured numbers, so the decision is not a guess:
 
 In order of least exposure:
 
-1. **GitHub Pages.** Settings, Pages, deploy from `main`. This is GitHub's bandwidth on a `github.io` address. It is not your website and there is no card attached: the documented limit is a soft one, and GitHub emails you rather than billing you. *(Check the current figure yourself; I could not reach their docs from where this was built.)*
+1. **GitHub Pages.** GitHub's bandwidth on a `github.io` address. Not your website, no card attached: the documented limit is a soft one and GitHub emails you rather than billing you. *(Check the current figure yourself; I could not reach their docs from where this was built.)*
+
+   **Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)` → Save.** One choice, the default one. The repo is already set up for it:
+
+   - `index.html` at the root redirects to the viewer and **carries the URL fragment across**, so the short form `https://kunaldovedy.github.io/mygraph/#z=...` works. Verified over HTTP on a phone viewport: a 71-node graph arrives intact.
+   - `.nojekyll` stops Pages running Jekyll over the repo.
+
+   Give it a minute after saving, then open `https://kunaldovedy.github.io/mygraph/`. You should see the start screen.
 2. **Cloudflare Pages or Netlify.** Separate free accounts, nothing shared with your existing hosting. Deploy from the same repo.
 3. **Somebody else's copy.** The viewer has no absolute self-references, so anyone can host it. The URL is a build flag, not a constant.
 
