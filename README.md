@@ -120,16 +120,24 @@ make site-data SITE=/path/to/kunaldovedy.com
 Everything below this point assumes Python, a clone and a Makefile. Most people
 will not do that.
 
-[`share/`](share/) is the version for everyone else. One HTML file, no install,
-works with **any** AI:
+[`share/`](share/) is the version for everyone else. Send them two lines:
 
-1. They open `share/viewer.html` by double-clicking it.
-2. They copy the prompt on the page into ChatGPT, Claude, Copilot or Gemini.
-   It interviews them for about fifteen minutes.
-3. They paste the JSON it produces back into the page. The graph appears.
+```
+Build me a service graph of how I serve the world.
+Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph/main/share/prompt.md
+```
 
-Then **Save as one file** gives them a single self-contained HTML to send on, or
-**Copy link** packs the whole graph into a URL.
+Their AI fetches the instructions, interviews them for about fifteen minutes,
+and then hands the graph back in whatever is the best form it can manage. If it
+can render HTML, which Claude and a ChatGPT canvas both can, it writes out a
+small self-contained page that is carried inside the prompt itself, so the
+graph appears **in the conversation**, with the data inside it. Nothing is
+installed, nothing is uploaded, and the conversation is where it is saved.
+
+If the tool cannot render a page it writes the file to disk instead, or packs
+the whole graph into one tappable link, or falls back to JSON and
+[`share/viewer.html`](share/viewer.html), which also opens by double-clicking
+and takes a paste.
 
 The model never has to get the drawing right. It only writes a list of nodes
 and a list of connections; stages, colours, shapes, layout, PageRank and reach

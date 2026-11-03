@@ -16,9 +16,11 @@ So the thing you distribute is **not a skill**. It is a prompt, and a skill is o
 
 Everything reduces to these, and only one of them is per-tool.
 
-**The prompt.** Plain text. It is the only part that has to be wrapped differently for each tool, and the wrappers in this folder are all generated from one source so they cannot drift.
+**The prompt.** Plain text, and it carries the viewer inside it. The last thing in `share/prompt.md` is a complete 11.5 KB HTML page with a `__DATA__` hole in it; a model that can render HTML copies that out, drops the JSON in, and the graph appears in the conversation with no host, no link and no paste. This is the only part that has to be wrapped differently for each tool, and every wrapper here is generated from that one source so they cannot drift.
 
-**The viewer.** One HTML file. No tool needs to know it exists. The AI hands someone JSON, they paste it in, they get a graph. This is what makes the whole thing tool-agnostic: the hard part never lives inside anybody's chat product.
+**The full viewer.** One larger HTML file, for the tools that cannot render a page: the AI hands someone JSON or a link, and this opens it. No tool needs to know it exists.
+
+Both make the whole thing tool-agnostic the same way: the hard part never lives inside anybody's chat product, and the model's share is small enough that every model gets it right.
 
 ## How to actually distribute it
 
@@ -46,8 +48,8 @@ Same for GitHub Pages: Settings, Pages, deploy from `main`. The proxy here block
 
 In order, if you only do some:
 
-1. **Turn on GitHub Pages.** Settings, Pages, deploy from `main`. Without a hosted viewer, a model that writes a link has nowhere to point it, so only the Claude path works end to end. This is the single action that unlocks the rest.
-2. **Send the two lines** from `share/ONE-LINER.txt`. No wrapper required; this already reaches everyone.
+1. **Send the two lines** from `share/ONE-LINER.txt`. No wrapper required, nothing hosted, and in any tool that renders HTML it already works end to end: the graph comes back inside the conversation. This reaches everyone.
+2. **Turn on GitHub Pages.** Settings, Pages, deploy from `main`. This is only for the tools that cannot render a page: without a hosted viewer, a model that writes a link has nowhere to point it.
 3. **The ChatGPT custom GPT**, for people who will use it repeatedly and want it in their sidebar. Turn Code Interpreter on when you build it: that is what lets it hand back a tappable link.
 4. **`AGENTS.md`** is already at the repo root and distributes itself to every coding agent, forever.
 5. The rest, when someone asks.
@@ -56,13 +58,13 @@ In order, if you only do some:
 
 The wrappers are not the same text with different headers.
 
-**Claude can draw it; ChatGPT cannot.** The Claude wrapper offers to render the graph as an artifact right there, so someone sees it without leaving the conversation. The ChatGPT and Gemini wrappers explicitly tell the model *not* to attempt a diagram, because ASCII art and a mermaid block are worse than the real thing and people stop at the bad version.
+**Some tools can show a page, and some cannot.** Claude artifacts render one, and so does a ChatGPT canvas on the plans that have it; those are the tools where the graph lands in the conversation. Where no page can be rendered the prompt falls back on its own, and every wrapper tells the model never to settle for ASCII art or a mermaid block, because people stop at the bad version and never see the good one.
 
-**Editor agents have a filesystem.** The Copilot and `AGENTS.md` wrappers tell the model to write `service-graph.json` to disk instead of printing forty lines into a chat window.
+**Editor agents have a filesystem.** The Copilot and `AGENTS.md` wrappers tell the model to write `service-graph.html` and `service-graph.json` to disk instead of printing them into a chat window.
 
 ## Keeping them in step
 
-The prompt lives in exactly one place, `share/prompt.md`, which is also the file models fetch. Everything in this folder, the viewer's copy of the prompt, and the root `AGENTS.md`, is generated from it:
+The prompt lives in exactly one place, `share/prompt.md`, which is also the file models fetch. The page it carries lives in `share/artifact-template.html` and is stitched into the end of it. Everything in this folder, the viewer's copy of the prompt, and the root `AGENTS.md`, is generated from the result:
 
 ```bash
 python3 share/build.py

@@ -2,12 +2,13 @@
 # Claude, as a project
 
 Create a project, open **Set project instructions**, and paste this. Claude
-can render the graph directly, so branch A of the instructions applies and
-people see it without leaving the conversation.
+renders artifacts, so branch A of the instructions applies: the graph appears
+as a page in the conversation, with the whole dataset inside it, and the
+conversation is where it stays.
 
 ## Project instructions
 
-```
+``````
 You are going to interview me, then build a map of how I serve the world.
 
 ## The interview
@@ -37,30 +38,53 @@ First write the graph as JSON, in the schema below.
 Then work out which of these you can actually do, and do the best one available
 to you. Do not ask me which; just do it.
 
-**A. You can render interactive HTML** (Claude artifacts, or an equivalent).
-Build the graph as an interactive artifact so I see it immediately: a radial
-diagram, me at the centre, each stage on its own ring reading outward, every
-kind of node given its own shape as well as its own colour so it still reads
-for anyone who cannot separate two hues. Then also give me the JSON, because
-the JSON outlives this conversation.
+**A. You can show me a working page right here in the conversation** (a Claude
+artifact, a canvas, an HTML preview, anything that runs HTML). Do this if you
+can; it is the best outcome by a long way.
 
-**B. You can run code** (Code Interpreter, an analysis tool, any Python
-sandbox). Turn the graph into a link and give me the link FIRST, the JSON
-second. This needs no network access. Run exactly this:
+At the end of these instructions there is a complete HTML file. Reproduce it
+EXACTLY, character for character, and change one single thing: replace the eight
+characters `__DATA__` with the JSON you just wrote.
+
+Nothing else. Do not reformat it, do not tidy the code, do not rename anything,
+do not add a library, do not rewrite the drawing, and do not leave parts out to
+save space. The file already works out the rings, the shapes, the colours, the
+labels, the panel and the legend from the node types. The only part that is mine
+is the JSON.
+
+Then put the JSON in the conversation as text as well.
+
+That is the whole thing saved: the page lives in this conversation and carries
+the entire graph inside itself, and the JSON sits beside it in plain text. There
+is no server, no account and no upload. If I ask for a change later, change the
+JSON and send the page again.
+
+**B. You cannot render HTML, but you can run code** (Code Interpreter, an
+analysis tool, any Python sandbox). Do both of these, in this order.
+
+Write the same file to disk, so I can download it and open it:
+
+```python
+html = open("template.html").read()   # the file at the end of these instructions
+open("service-graph.html", "w").write(html.replace("__DATA__", json.dumps(graph)))
+```
+
+If you have no copy of the template on disk, paste it into the script as a
+string. Then also turn the graph into a link, which works on a phone:
 
 ```python
 import json, gzip, base64
 graph = {...}   # the JSON you just wrote, as a Python dict
 packed = gzip.compress(json.dumps(graph, separators=(",", ":")).encode(), 9)
 fragment = base64.urlsafe_b64encode(packed).decode().rstrip("=")
-print("https://kunaldovedy.github.io/mygraph/#z=" + fragment)
+print("https://kunaldovedy.github.io/mygraph/share/viewer.html#z=" + fragment)
 ```
 
-The link carries the entire graph inside it. Tapping it opens the graph, on a
-phone or anywhere else, with nothing to install and nothing to paste. Give it
-to me as a plain tappable link.
+The link carries the entire graph inside it, so tapping it needs nothing
+installed and nothing pasted. Give me the file first and the link second, and
+the JSON last.
 
-**C. You can do neither.** Give me the JSON and tell me to open https://kunaldovedy.github.io/mygraph/ and
+**C. You can do neither.** Give me the JSON and tell me to open https://kunaldovedy.github.io/mygraph/share/viewer.html and
 paste it there.
 
 Never draw this as ASCII art or a mermaid diagram. Both are much worse than
@@ -101,4 +125,166 @@ Rules:
   feeding the values that started them is the loop, and the loop is the point.
 - Add "certainty": "guess" to anything you inferred rather than heard me say.
 - Aim for 30 to 60 nodes. Fewer is thin. More is unreadable.
+
+## The file
+
+This is the file for A and B. Reproduce it exactly; replace `__DATA__` with the
+JSON and change nothing else.
+
+<!--template-->
+```html
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Service Graph</title>
+<style>
+:root{--bg:#eef0f3;--card:#fff;--ink:#14171c;--ink2:#515966;--mut:#8b94a3;--rule:#dde1e7;--hi:#e8475f}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101317;--card:#171b21;--ink:#f2f4f7;--ink2:#aeb7c3;--mut:#79838f;--rule:#262c35}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 ui-sans-serif,system-ui,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;margin:0 0 2px;letter-spacing:-.02em}
+.sub{color:var(--ink2);margin:0 0 16px}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.grid{grid-template-columns:minmax(0,1fr) 310px}}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px}
+svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.ring{fill:none;stroke:var(--rule)}
+.ring.on{stroke:var(--hi);stroke-width:2}
+.lk{fill:none;stroke:var(--mut);stroke-opacity:.42}
+.lk.ret{stroke-dasharray:4 4}
+.lk.on{stroke:var(--hi);stroke-opacity:1;stroke-width:2.4}
+.lk.off{stroke-opacity:.07}
+.nd{cursor:pointer}
+.nd.off{opacity:.16}
+.nd text{font:600 11px ui-monospace,monospace;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:3.5px;stroke-linejoin:round;pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--card);border-radius:99px;padding:4px 11px 4px 8px;font:500 12px ui-monospace,monospace;color:var(--ink2);cursor:pointer}
+.chip.off{opacity:.38}
+.pane{padding:16px}
+.pane h2{font-size:1.15rem;margin:4px 0 2px;letter-spacing:-.01em}
+.kind{font:600 10px ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
+.pane p{color:var(--ink2);margin:8px 0 0}
+.rel{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px;align-items:baseline;padding:5px 0;border-top:1px solid var(--rule)}
+.rel span{font:600 10px ui-monospace,monospace;color:var(--mut);white-space:nowrap}
+.rel b{font-weight:500;cursor:pointer;color:var(--ink)}
+.rel b:hover{color:var(--hi)}
+.hint{color:var(--mut);font-size:13px;margin-top:10px}
+details{margin-top:18px;border-top:1px solid var(--rule);padding-top:12px}
+summary{cursor:pointer;font:600 12px ui-monospace,monospace;color:var(--ink2);letter-spacing:.04em}
+textarea{width:100%;height:120px;margin:10px 0 8px;background:var(--card);color:var(--ink2);border:1px solid var(--rule);border-radius:8px;padding:9px;font:12px/1.5 ui-monospace,monospace;resize:vertical}
+</style>
+<div class="wrap">
+<h1 id="who">Service graph</h1>
+<p class="sub" id="count"></p>
+<div class="grid">
+  <div class="card"><svg id="g" viewBox="0 0 900 900" role="img" aria-label="Radial service graph. The list beside it carries the same information."></svg></div>
+  <div class="card pane" id="pane"></div>
+</div>
+<div class="legend" id="leg"></div>
+<p class="hint">Tap a node to follow its connections. Tap a legend chip to hide a kind.</p>
+<details>
+  <summary>Your data, and how to keep it</summary>
+  <p class="hint">Everything is inside this one file: no server holds a copy and nothing is uploaded. It
+     stays in this conversation, so you can ask for a change and get a new version back. Copy the JSON to
+     carry the graph into another chat, or save the page to keep it without one.</p>
+  <textarea id="json" readonly spellcheck="false"></textarea>
+  <button class="chip" id="cp">Copy the JSON</button>
+  <button class="chip" id="dl">Save this page</button>
+</details>
+</div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const T={person:[0,'#14171c','core'],value:[1,'#4a3aa7','dia'],belief:[1,'#4a3aa7','dia'],chapter:[1,'#6b5fc4','hex'],
+question:[2,'#7a6ad6','cir'],tension:[2,'#7a6ad6','crs'],practice:[2,'#2a78d6','cir'],
+capability:[3,'#0b8a57','tri'],health:[3,'#0b8a57','tri'],source:[3,'#b07400','pen'],
+work:[4,'#dd5f2c','sqr'],commitment:[4,'#dd5f2c','sqr'],
+organisation:[5,'#c4477f','hex'],place:[5,'#c4477f','pen'],resource:[5,'#cf3f3e','crs'],
+audience:[6,'#118a62','pen'],outcome:[7,'#b07400','crs']};
+const A={vehicle:'organisation',org:'organisation',company:'organisation',team:'organisation',
+people:'audience',who:'audience',client:'audience',customer:'audience',
+skill:'capability',project:'work',product:'work',output:'work',
+result:'outcome',impact:'outcome',goal:'outcome',principle:'value',habit:'practice',tool:'resource'};
+const RET={renews:1,feeds:1,sustains:1,shaped_by:1,challenges:1,learned_from:1,funds:1};
+const R=[0,80,140,196,248,296,340,382],C=450,hidden=new Set();
+const nodes=D.nodes.map(n=>{const k=A[n.type]||n.type;return{...n,t:T[k]?k:'work'}});
+const by=new Map();nodes.forEach(n=>{by.set(n.id,n);by.set(n.label,n)});
+const links=(D.edges||[]).map(e=>({a:by.get(e.from??e.src),b:by.get(e.to??e.dst),r:e.rel||'relates to'})).filter(l=>l.a&&l.b&&l.a!==l.b);
+const deg=new Map();links.forEach(l=>{deg.set(l.a.id,(deg.get(l.a.id)||0)+1);deg.set(l.b.id,(deg.get(l.b.id)||0)+1)});
+// place each node on the ring its kind belongs to, ordered so related things sit near each other
+const rings=[];nodes.forEach(n=>{(rings[T[n.t][0]]=rings[T[n.t][0]]||[]).push(n)});
+rings.forEach((g,s)=>{if(!s){g.forEach(n=>{n.x=C;n.y=C});return}
+ if(s>1)g.forEach(n=>{const i=links.filter(l=>l.b===n&&T[l.a.t][0]<s).map(l=>l.a.an).filter(v=>v!=null);
+  n.o=i.length?Math.atan2(i.reduce((t,a)=>t+Math.sin(a),0),i.reduce((t,a)=>t+Math.cos(a),0)):Math.PI});
+ g.sort((a,b)=>(a.o??0)-(b.o??0)||a.label.localeCompare(b.label));
+ const st=2*Math.PI/g.length;g.forEach((n,i)=>{n.an=-Math.PI/2+st*.42+i*st;n.x=C+Math.cos(n.an)*R[s];n.y=C+Math.sin(n.an)*R[s]})});
+function poly(k,r){if(k=='cir'||k=='core')return null;if(k=='crs'){const a=r*.42,b=r*1.3;return`M${-a} ${-b}H${a}V${-a}H${b}V${a}H${a}V${b}H${-a}V${a}H${-b}V${-a}H${-a}Z`}
+ const s={dia:[4,1.25,-1.5708],tri:[3,1.35,-1.5708],sqr:[4,1.18,-.7854],pen:[5,1.2,-1.5708],hex:[6,1.14,0]}[k];
+ return Array.from({length:s[0]},(_,i)=>{const a=s[2]+i*2*Math.PI/s[0];return(i?'L':'M')+(Math.cos(a)*r*s[1]).toFixed(1)+' '+(Math.sin(a)*r*s[1]).toFixed(1)}).join('')+'Z'}
+const rad=n=>n.t=='person'?17:6+Math.min(7,(deg.get(n.id)||0)*1.1);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let sel=null;
+function draw(){
+ const near=sel?new Set([sel.id,...links.filter(l=>l.a===sel||l.b===sel).map(l=>l.a===sel?l.b.id:l.a.id)]):null;
+ const vis=n=>!hidden.has(n.t);
+ let s='';
+ R.forEach((r,i)=>{if(r)s+=`<circle class="ring${sel&&T[sel.t][0]==i?' on':''}" cx="${C}" cy="${C}" r="${r}"/>`});
+ links.forEach(l=>{if(!vis(l.a)||!vis(l.b))return;
+  const on=sel&&(l.a===sel||l.b===sel),mx=(l.a.x+l.b.x)/2,my=(l.a.y+l.b.y)/2;
+  const ret=RET[l.r],cx=ret?mx+(C-mx)*.7:mx-(l.b.y-l.a.y)*.11,cy=ret?my+(C-my)*.7:my+(l.b.x-l.a.x)*.11;
+  s+=`<path class="lk${ret?' ret':''}${on?' on':sel?' off':''}" d="M${l.a.x.toFixed(1)} ${l.a.y.toFixed(1)}Q${cx.toFixed(1)} ${cy.toFixed(1)} ${l.b.x.toFixed(1)} ${l.b.y.toFixed(1)}"/>`});
+ // a label runs outward along its own ray, so two of them at the same angle on
+ // neighbouring rings land on one line. Keep the ones that fit, drop the rest.
+ const lab=new Set(),taken=[];
+ nodes.filter(n=>vis(n)&&n.t!='person'&&(T[n.t][0]<3||(near&&near.has(n.id))))
+  .sort((a,b)=>(near&&near.has(a.id)?0:1)-(near&&near.has(b.id)?0:1)
+   ||T[a.t][0]-T[b.t][0]||(deg.get(b.id)||0)-(deg.get(a.id)||0))
+  .forEach(n=>{const r0=R[T[n.t][0]]+rad(n)+6,r1=r0+6.3*Math.min(24,n.label.length),a=n.an;
+   const clash=taken.some(t=>{const d=Math.abs(((a-t.a+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI);
+    return Math.min(r1,t.r1)>Math.max(r0,t.r0)&&d*Math.min(r1,t.r1)<15});
+   if(!clash){taken.push({a,r0,r1});lab.add(n.id)}});
+ nodes.forEach(n=>{if(!vis(n))return;const[,col,gl]=T[n.t],r=rad(n),p=poly(gl,r),off=near&&!near.has(n.id);
+  const nm=n.t=='person'||lab.has(n.id),lf=Math.cos(n.an||0)<0;
+  s+=`<g class="nd${off?' off':''}" data-i="${esc(n.id)}" transform="translate(${n.x.toFixed(1)} ${n.y.toFixed(1)})" tabindex="0" role="button" aria-label="${esc(n.label)}">`
+   +(n.t=='person'?`<circle r="${r+6}" fill="none" stroke="${col}" stroke-width="1.5"/>`:'')
+   +(p?`<path d="${p}" fill="${col}" stroke="var(--card)" stroke-width="1.3"/>`:`<circle r="${r}" fill="${col}" stroke="var(--card)" stroke-width="1.3"/>`)
+   +(nm?(n.t=='person'?`<text y="${r+18}" text-anchor="middle" style="font-size:13px">${esc(n.label)}</text>`
+     :`<text x="${lf?-(r+6):r+6}" y="4" text-anchor="${lf?'end':'start'}" transform="rotate(${((n.an*180/Math.PI)+(lf?180:0)).toFixed(1)})">${esc(n.label.length>24?n.label.slice(0,23)+'\u2026':n.label)}</text>`):'')
+   +`</g>`});
+ document.getElementById('g').innerHTML=s;
+ document.querySelectorAll('.nd').forEach(g=>{const go=()=>pick(by.get(g.dataset.i));
+  g.onclick=go;g.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();go()}}});
+}
+function pick(n){sel=sel===n?null:n;draw();pane()}
+function pane(){
+ const n=sel||by.get((D.nodes[0]||{}).id);if(!n){return}
+ const out=links.filter(l=>l.a===n),inc=links.filter(l=>l.b===n);
+ const row=(l,o)=>`<div class="rel"><span>${esc((o?l.r:l.r+' this').replace(/_/g,' '))}</span><b data-i="${esc((o?l.b:l.a).id)}">${esc((o?l.b:l.a).label)}</b></div>`;
+ document.getElementById('pane').innerHTML=
+  `<div class="kind">${esc(n.t)}  ·  stage ${T[n.t][0]}</div><h2>${esc(n.label)}</h2>`
+  +(n.note||n.summary?`<p>${esc(n.note||n.summary)}</p>`:'')
+  +(out.length?`<div style="margin-top:12px" class="kind">Outward · ${out.length}</div>`+out.map(l=>row(l,1)).join(''):'')
+  +(inc.length?`<div style="margin-top:12px" class="kind">Inward · ${inc.length}</div>`+inc.map(l=>row(l,0)).join(''):'');
+ document.querySelectorAll('.rel b').forEach(b=>b.onclick=()=>pick(by.get(b.dataset.i)));
+}
+document.getElementById('who').textContent=D.name||'Service graph';
+document.getElementById('count').textContent=`${nodes.length} nodes · ${links.length} connections · read outward from the centre`;
+const kinds=[...new Set(nodes.map(n=>n.t))].sort((a,b)=>T[a][0]-T[b][0]);
+document.getElementById('leg').innerHTML=kinds.map(k=>{const p=poly(T[k][2],6);
+ return `<button class="chip" data-k="${k}"><svg width="14" height="14" viewBox="-7 -7 14 14">${p?`<path d="${p}" fill="${T[k][1]}"/>`:`<circle r="6" fill="${T[k][1]}"/>`}</svg>${k} ${nodes.filter(n=>n.t==k).length}</button>`}).join('');
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{const k=c.dataset.k;
+ hidden.has(k)?hidden.delete(k):hidden.add(k);c.classList.toggle('off');draw()});
+const J=JSON.stringify(D,null,1),box=document.getElementById('json');box.value=J;
+document.getElementById('cp').onclick=async e=>{try{await navigator.clipboard.writeText(J)}
+ catch(x){box.focus();box.select();try{document.execCommand('copy')}catch(y){}}e.target.textContent='Copied'};
+document.getElementById('dl').onclick=()=>{const c=document.documentElement.cloneNode(true);
+ ['#g','#pane','#leg'].forEach(k=>{const el=c.querySelector(k);if(el)el.innerHTML=''});
+ const b=new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(b);a.download=((D.name||'service graph').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.html';
+ document.body.appendChild(a);a.click();a.remove()};
+draw();pane();
+</script>
 ```
+<!--/template-->
+``````

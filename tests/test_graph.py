@@ -277,3 +277,47 @@ def test_the_site_payload_is_in_step_with_the_data(graph: Graph) -> None:
     payload = json.loads(shipped.read_text())
     assert payload["meta"]["node_count"] == len(graph.nodes)
     assert payload["meta"]["edge_count"] == len(graph.edges)
+
+
+# --------------------------------------------------------- the shared prompt
+# share/prompt.md is fetched by a chat model and carries a whole HTML page
+# inside it. These guard the stitching, because a drifted copy fails silently:
+# the model gets an older page and nobody sees a stack trace.
+
+SHARE = ROOT / "share"
+
+
+def _template() -> str:
+    return (SHARE / "artifact-template.html").read_text().strip()
+
+
+def test_the_page_a_model_copies_out_has_exactly_one_hole() -> None:
+    template = _template()
+    assert template.count("__DATA__") == 1
+    assert "```" not in template, "a code fence cannot be quoted inside the prompt"
+    assert "http" not in template, "the page must make no network request"
+
+
+def test_the_prompt_carries_the_page_verbatim() -> None:
+    """Run share/build.py after editing either one."""
+    prompt = (SHARE / "prompt.md").read_text()
+    assert _template() in prompt, "share/prompt.md is out of step; run share/build.py"
+    assert prompt.count("__DATA__") == 4, "the hole in the page, and the three places that name it"
+
+
+def test_the_viewer_carries_the_same_prompt() -> None:
+    import base64
+    import re
+
+    html = (SHARE / "viewer.html").read_text()
+    block = re.search(r'<script type="text/plain" id="prompt-src">\n(.*?)\n</script>', html, re.S)
+    assert block, "the viewer has nowhere to keep the prompt"
+    carried = base64.b64decode(block.group(1)).decode()
+    assert _template() in carried
+    assert carried.startswith("You are going to interview me")
+
+
+def test_no_closing_script_tag_hides_inside_the_viewer() -> None:
+    """One spelled out inside a script or a comment ends the element there."""
+    html = (SHARE / "viewer.html").read_text()
+    assert html.count("<script") == html.count("</" + "script>")
