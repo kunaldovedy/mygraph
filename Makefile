@@ -42,3 +42,8 @@ site-data:       ## Write the web payload into a site checkout (SITE=/path/to/si
 	$(PY) -m mygraph export web --out integrations/kunaldovedy.com/app/graph/graph-data.json
 
 .PHONY: site-data
+
+wrappers:        ## Regenerate the per-tool chat wrappers from the canonical prompt
+	$(PY) share/distribute/build_wrappers.py $(if $(VIEWER_URL),--viewer-url $(VIEWER_URL),)
+
+.PHONY: wrappers

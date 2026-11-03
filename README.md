@@ -137,6 +137,12 @@ are computed in the page. That is why a graph made in ChatGPT and one made in
 Claude come out identical, and it is forgiving about the specific ways chat
 models are sloppy. See [share/README.md](share/README.md).
 
+There is no universal skill format, so the thing that gets distributed is the
+prompt, not a skill. [share/distribute/](share/distribute/) holds a ready-made
+wrapper for each tool, all generated from one source so they cannot drift:
+a ChatGPT custom GPT, a Claude project, a Gemini Gem, Copilot instructions and
+an `AGENTS.md` for editor agents. `make wrappers` regenerates them.
+
 ## Let Claude build yours
 
 The repository ships a Claude Code agent skill at
