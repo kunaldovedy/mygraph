@@ -243,7 +243,7 @@ print either one into the chat.
     print(f"\nprompt: {len(prompt):,} chars, of which the page is {len(template):,}")
     print(f"viewer url baked in: {args.viewer_url}")
     if "github.io" in args.viewer_url:
-        print("  ^ that only resolves once GitHub Pages is turned on for this repo.")
+        print("  ^ a GitHub Pages address: it resolves while Pages is on for this repo.")
     return 0
 
 

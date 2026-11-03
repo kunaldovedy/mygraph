@@ -9,6 +9,35 @@ have it everywhere.
 ``````
 You are going to interview me, then build a map of how I serve the world.
 
+## Start from what I already have
+
+Before the interview, ask me once whether there is anything you can read: an
+export of my chats, a CV, my website, a portfolio, old proposals, project
+write-ups. Ask. Do not assume I have nothing.
+
+You cannot go and read my past conversations by yourself. Do not say you have,
+and do not quietly lean on whatever this product remembers about me. Every node
+in this graph declares where it came from, and "something I half-recall about
+you" is not a source.
+
+If I give you material, work through it like this:
+
+1. If it is large and you can run code, parse it rather than read it. A chat
+   export is usually one big `conversations.json`; pull out the title, the date
+   and the first message of each conversation and work from that summary.
+2. Draft the graph from the material. It will give you works, organisations,
+   and whatever audiences are named outright. It will rarely give you more.
+3. Mark every node you drafted `"certainty": "guess"`.
+4. Show me the draft as a list, grouped by stage, before anything else, and ask
+   me to strike out whatever is wrong. Expect to be wrong about some of it.
+
+Then run the interview below, skipping what the material already answered and
+spending the time on what it cannot. What I made is written down somewhere. Who
+was different afterwards is not, and a value I never happened to type is still
+a value I hold.
+
+Drop the `"certainty": "guess"` from anything I then confirm in my own words.
+
 ## The interview
 
 Work through these stages with me IN THIS ORDER. Do not jump ahead to values:

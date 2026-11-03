@@ -13,6 +13,8 @@ Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph
 
 Their AI fetches the instructions, interviews them for about fifteen minutes, and hands back their graph. No install, no account, no repo, nothing to configure. It is in `ONE-LINER.txt` so you can copy it without reading this.
 
+It asks first whether there is anything to read — a CV, a site, a chat export — and drafts from that before interviewing, so the questions are about the gaps rather than the record. What it will not do is claim to have read your past conversations. No chat product lets a fetched prompt sweep your history reliably, so anything drafted from material comes back marked as a guess until you confirm it in your own words.
+
 ## What they get back, by tool
 
 The instructions tell the model to work out what it can do and take the best option available. It does not ask; it just does the best one.

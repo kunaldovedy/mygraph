@@ -63,6 +63,15 @@ back inward:
 values page, a repository README. Quote those verbatim rather than
 paraphrasing. A paraphrase is a guess wearing a suit.
 
+**Ask what you may read before you ask a single question.** You are running on
+their machine with a filesystem, which is the one setting where "read what I
+already wrote" is literally possible: a CV, a portfolio folder, old proposals,
+an exported `conversations.json`, a transcript directory. Ask them to point you
+at it. Then draft from the material, mark every drafted node `inferred`, show
+the draft and let them strike out what is wrong, and spend the interview on
+what no file holds: stage 3 audiences, stage 4 outcomes and stage 7 values.
+Promote a node to `self` when they confirm it in their own words.
+
 ## Provenance is the point
 
 Every node and edge declares `source` and `confidence`. This is not
