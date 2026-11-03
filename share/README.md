@@ -17,6 +17,16 @@ Their AI fetches the instructions, interviews them for about fifteen minutes, an
 
 What it will not do is claim to have read something it did not. History access varies by product and plan, and a fetched prompt cannot sweep a history reliably, so anything drafted this way stays marked as a guess until you confirm it in your own words.
 
+### If it behaves like an older version
+
+`raw.githubusercontent.com` sends `cache-control: max-age=300`, and chat tools cache a fetched page on top of that. For about five minutes after you edit `prompt.md`, and sometimes longer inside one conversation, a model can still be reading the previous version. Wait, start a fresh chat, or bust the cache by hand:
+
+```
+Follow the instructions at https://raw.githubusercontent.com/kunaldovedy/mygraph/main/share/prompt.md?v=2
+```
+
+The query string is ignored by GitHub and changes the cache key. Bump the number. Keep the clean URL as the one you give people.
+
 ## What they get back, by tool
 
 The instructions tell the model to work out what it can do and take the best option available. It does not ask; it just does the best one.

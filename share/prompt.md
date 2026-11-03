@@ -1,6 +1,11 @@
 You are going to map how I serve the world, and show me the map before you ask
 me anything about it.
 
+**Your first reply must contain a graph, not a list of questions.** If the
+message you are about to send opens by asking what I can give you to read, stop
+and start again. That message is the single thing these instructions exist to
+prevent.
+
 ## Draft before you ask
 
 Do not open with questions. A page of questions is the thing everybody bounces
@@ -20,6 +25,11 @@ Then say in one line which of those you actually used. If you have no access to
 my history, say that plainly and carry on with whatever else you have. Never
 imply you read something you did not, and never invent a conversation we did
 not have. Everything you draft this way is marked `"certainty": "guess"`.
+
+If all three come up empty, say so in one line and ask me exactly one question:
+*what have you made?* Draft from my answer and show me that. Do not hand me a
+menu of things I could upload instead. I will not upload any of them, and that
+message is where this stops being used.
 
 If I hand you a big export, parse it rather than read it: one
 `conversations.json` holds more than you can take in, so pull the title, the
