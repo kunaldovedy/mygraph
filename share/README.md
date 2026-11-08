@@ -132,6 +132,8 @@ Run `python3 share/build.py` or `make wrappers` after editing `prompt.md` or `ar
 
 Your graph is never uploaded, because there is nowhere to upload it to. It lives in the page, in the conversation that holds the page, in the link if one is made, and in the file if one is saved.
 
-The page the model writes into the chat makes no network request of any kind. `viewer.html` makes exactly one: it requests its fonts from Google Fonts, so Google sees that it was loaded, though never what is in it. Every font has a real fallback, so it works fully offline and simply looks plainer. If that one request is unwelcome, delete the `<link rel="stylesheet">` on line 2 of `viewer.html`; nothing else changes.
+**Neither page makes a network request of any kind.** Not one. The page the model writes into the chat never did; `viewer.html` used to fetch three fonts from Google, which told Google the IP of everyone who opened a graph link, and that line is gone. Both now run on the fonts already on the device, and both work with the network switched off.
+
+A link's payload rides in the URL fragment, after the `#`. Browsers do not send a fragment to the server, so even when the viewer is fetched over the web, the host serving it — GitHub Pages or anyone else — receives the path and your IP, never the graph. The graph is decoded in your browser and goes nowhere else.
 
 A link or a saved file carries the whole graph inside it, so both are as public as whoever you send them to. And whatever someone types into ChatGPT is subject to that company's terms, which is worth saying out loud before anybody maps their inner life into one.
